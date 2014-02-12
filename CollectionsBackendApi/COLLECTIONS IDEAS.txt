@@ -1,0 +1,12 @@
+TODO
+
+pretty date format in feed
+Order reddit posts in feed by score + date
+Add youtube feeds
+Show source feed in feed example webdev, medium
+Add ability to save feed items
+Add ability to sort feed items based on type, score, comments, date, non read
+Add user integration
+Add ability to import feeds from sites, eg youtube channels, twitter folllowers etc...
+Add ability to crawl reddit from youtube and rss comment threads
+Add ability to customise feed - hide retweets, only show reddit posts with certain amount of comments, votes etc...

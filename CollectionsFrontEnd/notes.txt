@@ -1,0 +1,79 @@
+http://gdata.youtube.com/feeds/api/users/CGPGrey/uploads?alt=json&max-results=10
+
+
+
+http://gdata.youtube.com/feeds/api/users/userCGPGrey/uploads?alt=json&max-results=50
+
+
+http://www.youtube.com/user/CGPGrey
+https://twitter.com/KarimHmaissi
+
+
+
+2013-12-23T16:00:02.000Z
+
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/{{post.videoId}}" frameborder="0" allowfullscreen></iframe>
+
+
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=https://medium.com/feed/philosophy-logic&title=philosophy
+
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.youtube.com/user/CGPGrey&title=CGPGrey
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=https://twitter.com/KarimHmaissi&title=KarimHmaissi
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.youtube.com/user/CinemaSins&title=CinemaSins
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.youtube.com/user/LeagueOfSuperCritics&title=LeagueOfSuperCritics
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=https://twitter.com/BryanCranston&title=BryanCranston
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=https://twitter.com/ThatKevinSmith&title=ThatKevinSmith
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=https://twitter.com/pennjillette&title=pennjillette
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=https://twitter.com/daraobriain&title=daraobriain
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/bestof&title=bestof
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/explainlikeimfive&title=explainlikeimfive
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/IAmA/&title=IAmA
+
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/webdev&title=webdev
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://feeds.feedburner.com/TechCrunch&title=TechCrunch
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=https://medium.com/feed/tech-talk&title=tech-talk
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=https://medium.com/feed/life-hacking-2&title=life-hacking
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=https://medium.com/feed/philosophy-logic&title=philosophy
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=https://medium.com/feed/business-startup-development-and-more&business
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://rss1.smashingmagazine.com/feed&title=smashingmagazine
+
+
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/movies&title=Movies
+
+
+http://www.reddit.com/r/unitedkingdom
+
+
+
+feeds: 
+collections
+reddit
+youtube
+instagram
+pinterest
+rss
+twitter content
+
+extra feeds:
+email
+twitter
+
+
+
+features:
+
+reddit comment integration
+feed ranking
+feed tags
+save feeds
+
+
+
+
+
+
+
+
+
+

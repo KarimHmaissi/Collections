@@ -1,0 +1,26 @@
+<!-- <div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ng-href="#">Home</a></li>
+    <li><a ng-href="#">About</a></li>
+    <li><a ng-href="#">Contact</a></li>
+  </ul>
+  <h3 class="text-muted">CollectionsFrontEnd</h3>
+</div> -->
+
+<div>
+  <ol>
+    <li ng-repeat="feed in feeds">
+      <a href="#/feed/{{feed.id}}"><h3>{{feed.title}}</h3></a>
+      <ul class="feed-details-list">
+        <li><p>{{feed.upvotes}}</p></li>
+        <li><p>{{feed.feedType}}</p></li>
+        <li><a href="#/user/{{feed.submitterId}}"><p>{{feed.submitter}}</p></a></li>
+        <li><a href="#" id="{{feed.id}}" data-follow="">Follow Feed</a></li>
+      </ul>
+    </li>
+  </ol>
+</div>
+
+<!-- <div class="footer">
+  <p>♥ from the Yeoman team</p>
+</div> -->

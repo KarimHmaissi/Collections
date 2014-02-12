@@ -1,0 +1,11 @@
+<h3><a href="{{post.link}}">{{post.title}}</a></h3>
+<a video="" href="#" id="{{post.videoId}}">Show Video</a>
+<ul class="feed-details-list">
+	<li><a href="{{post.link}}"><img src="{{post.thumbnail}}" alt="" height="50px"></a></li>
+	<li><p>Views: {{post.numYoutubeViews}}</p></li>
+	<li><img src="/images/youtube.png" alt="Youtube Post"></li>
+	<li><a href="http://www.youtube.com/user/{{post.author}}"><p>{{post.author}}</p></a></li>
+	<li><p>{{post.posted}}</p></li>
+	<li><a href="{{post.redditCommentUrl}}"><p>{{post.numberOfComments}} comments</p></a></li>
+</ul>
+<p>{{post.description | limitTo:100}}</p>
