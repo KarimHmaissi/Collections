@@ -15,7 +15,7 @@ class SubmitController {
         try {
             def feedType = crawlerService.getFeedType(feedUrl)
             println "feed type: " + feedType
-            crawlerService.crawlFeed(new Feed(feedUrl: feedUrl, feedType: feedType, title: params.title))
+            crawlerService.crawlFeed(feedUrl, feedType, params.title)
             def message = [message:"successfully added feed"]
             render message as JSON
         } catch(Exception e) {

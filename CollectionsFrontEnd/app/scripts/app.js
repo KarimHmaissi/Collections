@@ -16,6 +16,10 @@ angular.module('collectionsFrontEndApp', [
         templateUrl: "views/feed.html",
         controller: "FeedCtrl"
       })
+      .when("/userFeed/:id", {
+        templateUrl: "views/userFeeds.html",
+        controller: "UserFeedsCtrl"
+      })
       .otherwise({
         redirectTo: '/'
       });

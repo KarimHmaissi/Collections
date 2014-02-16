@@ -18,37 +18,40 @@ mainModule.controller('FeedCtrl', function ($scope, $routeParams, feedService) {
 		$scope.posts = result.posts;
 		$scope.Math = window.Math;
 
-
-		//TODO move this
-		//hide reddit posts with a score of less than 10
-
-		// var x = 0;
-		// for(x; x < $scope.posts.length; x++) {
-		// 	if($scope.posts[x].postType === "reddit") {
-		// 		// console.log("reddit post score: " + $scope.posts[x].redditScore + " id: " + x)
-		// 		console.log($scope.posts[x].title);
-		// 		console.log($scope.posts[x].redditUpvotes);
-
-		// 		if($scope.posts[x].redditUpvotes < 10) {
-		// 			// $scope.posts.splice(x, 1);
-		// 			 console.log("removing reddit post from posts: " + x);
-
-		// 		} 
-		// 	}
-		// }
-
-		// var length = $scope.posts.length
-		// while(length--) {
-		// 	if($scope.posts[length].postType === "reddit") {
-
-		// 		if($scope.posts[length].redditUpvotes < 10) {
-		// 			 $scope.posts.splice(length, 1);
-		// 		} 
-		// 	}
-		// }
-
-
 	});
+});
+
+
+mainModule.controller('UserCtrl', function ($scope, $routeParams, feedService) {
+	feedService.getFeedByUser($routeParams.id).then(function(result) {
+		console.log("got feeds");
+		console.log(result);
+		$scope.feeds = result.feeds;
+		$scope.posts = result.posts;
+		$scope.Math = window.Math;
+	});
+
+	$scope.getFeedByType = function(feedType) {
+		feedService.getFeedByUser($routeParams.id, feedType).then(function(result) {
+			$scope.feeds = result.feeds;
+			$scope.posts = result.posts;
+		});
+	}
+});
+
+mainModule.controller('UserFeedsCtrl', function ($scope, $routeParams, feedService) {
+	feedService.getFeedByUser($routeParams.id).then(function(result) {
+		$scope.feeds = result.feeds;
+		$scope.posts = result.posts;
+		$scope.Math = window.Math;
+	});
+
+	$scope.getFeedByType = function(feedType) {
+		feedService.getFeedByUser($routeParams.id, feedType).then(function(result) {
+			$scope.feeds = result.feeds;
+			$scope.posts = result.posts;
+		});
+	}
 });
 
 

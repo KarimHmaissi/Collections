@@ -49,11 +49,10 @@ class CrawlerService {
             return feedType
 
         }
-
     }
 
-    def crawlFeed(Feed feed) {
-
+    def crawlFeed(feedUrl, feedType, title) {
+        def feed = new Feed(feedUrl: feedUrl, feedType: feedType, title: title)
         if(feed) {
             switch(feed.feedType) {
                 case "reddit":

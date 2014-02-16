@@ -7,10 +7,19 @@
   <h3 class="text-muted">CollectionsFrontEnd</h3>
 </div> -->
 
+<p>Feed Types</p>
+<ul class="list-style-none feed-details-list">
+  <li><a href="" ng-click="getFeedByType('all')">All</a></li>
+  <li><a href="" ng-click="getFeedByType('rss')">RSS</a></li>
+  <li><a href="" ng-click="getFeedByType('reddit')">Reddit</a></li>
+  <li><a href="" ng-click="getFeedByType('youtube')">Youtube</a></li>
+  <li><a href="" ng-click="getFeedByType('twitter')">Twitter</a></li>
+</ul>
+
 <div>
   <ol>
     <li ng-repeat="feed in feeds">
-      <a href="#/feed/{{feed.id}}"><h3>{{feed.title}}</h3></a>
+      <a href="#/feed/{{feed.id}}"><p><strong>{{feed.title}}</p></strong></a>
       <ul class="feed-details-list">
         <li><p>{{feed.upvotes}}</p></li>
         <li><p>{{feed.feedType}}</p></li>
