@@ -30,7 +30,8 @@ http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com
 http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/explainlikeimfive&title=explainlikeimfive
 http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/IAmA/&title=IAmA
 
-http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/webdev&title=webdev
+	
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/unitedkingdom&title=United Kingdom
 http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://feeds.feedburner.com/TechCrunch&title=TechCrunch
 http://localhost:8080/CollectionsBackendApi/submit?feedUrl=https://medium.com/feed/tech-talk&title=tech-talk
 http://localhost:8080/CollectionsBackendApi/submit?feedUrl=https://medium.com/feed/life-hacking-2&title=life-hacking

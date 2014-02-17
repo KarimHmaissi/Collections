@@ -1,9 +1,15 @@
 /*Generic*/
 
-h1,h2,h3,h4,h5,h6 {
+body {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+h1,h2,h3,h4,h5,h6, p, a {
   font-family: 'Lato', sans-serif;
   /*font-weight: bold;*/
   text-rendering: optimizelegibility;
+  color: #34495e;
 }
 
 h1 {
@@ -46,6 +52,29 @@ p {
 }
 
 
+.spinner {
+  height: 50px
+  width: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: red;
+}
+
+
+.btn-primary {
+  background-color: #1abc9c !important;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #16a085 !important;
+}
+
+
+.post {
+  margin-top:28px;
+}
 
 /*Util*/
 .list-style-none {
@@ -53,11 +82,23 @@ p {
   padding: 0;
 }
 
+.margin-top {
+  margin-top: 28px;
+}
+
+.margin-top-lg {
+  margin-top: 48px;
+}
+
+.fixed {
+  position: fixed;
+}
+
 
 
 .feed-list-user p {
   padding: 0;
-  margin: 0;
+  /*margin: 0;*/
 }
 
 /*.feed-list-user li {
@@ -72,4 +113,32 @@ p {
 .feed-details-list > li {
   display: inline-block;
   padding-left: 8px;
+}
+
+
+
+ 
+.view-animate {
+  padding:10px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+ 
+.view-animate.ng-enter, .view-animate.ng-leave {
+  background-color:red;
+  margin-top: 100px;
+
+}
+ 
+.view-animate.ng-enter {
+  left:100%;
+}
+.view-animate.ng-enter.ng-enter-active {
+  left:0;
+}
+.view-animate.ng-leave.ng-leave-active {
+  left:-100%;
 }

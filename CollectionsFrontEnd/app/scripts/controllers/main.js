@@ -40,6 +40,8 @@ mainModule.controller('UserCtrl', function ($scope, $routeParams, feedService) {
 });
 
 mainModule.controller('UserFeedsCtrl', function ($scope, $routeParams, feedService) {
+	$scope.loading = true;
+
 	feedService.getFeedByUser($routeParams.id).then(function(result) {
 		$scope.feeds = result.feeds;
 		$scope.posts = result.posts;

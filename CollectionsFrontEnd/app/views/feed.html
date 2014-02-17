@@ -8,16 +8,21 @@
 	<li><a href="">Twitter<img src="/images/twitter.png" alt="Youtube Post"></a></li>
 </ul> -->
 
-<h4>Feed View</h4>
+<!-- <h4>Feed View</h4> -->
 
-<a href="#/feed/{{feed.id}}"><h3>{{feed.title}}</h3></a>
+<div class="spinner" ng-show="loading"></div>
+
+<h3>{{feed.title}}</h3>
 <p><strong>{{feed.feedUrl}}</strong></p>
-<ul class="feed-details-list">
-	<li><p>{{feed.upvotes}}</p></li>
-	<li><p>{{feed.feedType}}</p></li>
-	<li><a href="#/user/{{feed.submitterId}}"><p>{{feed.submitter}}</p></a></li>
-	<li><a href="#" id="{{feed.id}}" data-follow="">Follow Feed</a></li>
-</ul>
+
+<div class="text-left">
+	<ul class="feed-details-list">
+		<li><p>{{feed.upvotes}}</p></li>
+		<li><p>{{feed.feedType}}</p></li>
+		<li><a href="#/user/{{feed.submitterId}}">{{feed.submitter}}</a></li>
+		<li><a href="#" class="btn btn-primary" id="{{feed.id}}" data-follow="">Follow Feed</a></li>
+	</ul>
+</div>
 
 <!-- <ul class="feed-details-list" ng-repeat="post in posts">
 	<li><a href="{{post.link}}"><p>{{post.link}}</p></a></li>
