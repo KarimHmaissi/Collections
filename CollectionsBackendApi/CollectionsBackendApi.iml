@@ -40,6 +40,7 @@
       <sourceFolder url="file://$MODULE_DIR$/grails-app/utils" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/groovy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/grails-app/taglib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/jobs" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target/classes" />
       <excludeFolder url="file://$MODULE_DIR$/target/work/plugin-build-classes" />
       <excludeFolder url="file://$MODULE_DIR$/target/work/plugin-classes" />
@@ -91,6 +92,8 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/twitter4j/twitter4j-stream/3.0.5/twitter4j-stream-3.0.5.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/twitter4j/twitter4j-async/3.0.5/twitter4j-async-3.0.5.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/twitter4j/twitter4j-core/3.0.5/twitter4j-core-3.0.5.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/c3p0/c3p0/0.9.1.1/c3p0-0.9.1.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.2.1/quartz-2.2.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

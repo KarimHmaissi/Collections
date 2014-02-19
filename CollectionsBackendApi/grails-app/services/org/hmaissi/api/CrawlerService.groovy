@@ -52,26 +52,104 @@ class CrawlerService {
     }
 
     def crawlFeed(feedUrl, feedType, title) {
-        def feed = new Feed(feedUrl: feedUrl, feedType: feedType, title: title)
+        //check if feed is already in DB
+        def feeds = Feed.findAllByTitle(title)
+        def update = false;
+        def feed
+
+        if(feeds.size() > 0) {
+            feed = feeds.get(0)
+            update = true
+        } else {
+            feed = new Feed(feedUrl: feedUrl, feedType: feedType, title: title)
+        }
+
+        def posts = []
+
         if(feed) {
             switch(feed.feedType) {
                 case "reddit":
-                    redditService.crawl(feed)
+                    posts = redditService.crawl(feed)
                     break;
                 case "rss":
-                    rssService.crawl(feed)
+                    posts = rssService.crawl(feed)
                     break;
                 case "twitter":
-                    twitterService.crawl(feed)
+                    posts = twitterService.crawl(feed)
                     break;
                 case "youtube":
-                    youtubeService.crawl(feed)
+                    posts = youtubeService.crawl(feed)
                     break;
                 default:
                     println("did not recognise feed type: " + feed.feedType)
             }
         }
+
+        if(posts.size() > 0) {
+
+            saveFeed(feed, posts, update)
+        }
     }
+
+    def saveFeed(Feed feed, posts, update) {
+        try {
+
+            //feed is already present, update with new posts
+            if(update) {
+
+                def savedPosts = Post.findAllByFeed(feed, [sort:"posted", order:"desc", max:1])
+
+                for(Post post: posts) {
+
+                    //check if post is newer than last post
+                    if(savedPosts.size() > 0) {
+                        if(post.posted > savedPosts.get(0).posted) {
+                            println "new post!"
+                            feed.addToPosts(post)
+                        }
+                    } else {
+                        feed.addToPosts(post)
+                    }
+                }
+
+                feed.save(failOnError: true)
+
+            } else {
+
+                feed.posts = posts
+                feed.upvotes = 1
+                Date date = new Date()
+                feed.score = feed.upvotes + (date.getTime() / 1000 / 60) //millisecond to seconds to minutes
+
+                feed.save(failOnError: true)
+            }
+
+        } catch(Exception e ) {
+            println "error: " + e.message
+            println "error: " + e.getCause()
+        }
+
+    }
+
+    def crawlAllPosts() {
+//        def feeds = Feed.list()
+//        for(def feed: feeds) {
+//            println "crawling feed: " + feed.feedUrl
+//            crawlFeed(feed.feedUrl, feed.feedType, feed.title)
+//            Thread.sleep(30000)
+//        }
+    }
+
+//    def savePosts(feed, posts) {
+//        for(Post post: posts) {
+//            try {
+//                post.save(failOnError: true)
+//            } catch (Exception e) {
+//                println "error: " + e.message
+//                println "error: " + e.getCause()
+//            }
+//        }
+//    }
 
     def crawlPost(Post post) {
         //check if reddit has post

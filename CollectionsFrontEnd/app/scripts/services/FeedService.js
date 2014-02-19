@@ -19,7 +19,7 @@ mainModule.service("feedService", function($http, $q) {
 			var defer = $q.defer();
 			 
 			$http.jsonp(
-				"http://localhost:8080/CollectionsBackendApi/feed?callback=JSON_CALLBACK")
+				"http://192.168.0.2:8080/CollectionsBackendApi/feed?callback=JSON_CALLBACK")
 				// .then(function(result) {
 				// 	return result;	
 				// });
@@ -40,7 +40,7 @@ mainModule.service("feedService", function($http, $q) {
 			var defer = $q.defer();
 			var self = this;
 
-			$http.jsonp("http://localhost:8080/CollectionsBackendApi/feed/get?id=" 
+			$http.jsonp("http://192.168.0.2:8080/CollectionsBackendApi/feed/get?id=" 
 				+ id + "&callback=JSON_CALLBACK")
 				.success(function(result) {
 					console.log("feed result:");
@@ -61,10 +61,10 @@ mainModule.service("feedService", function($http, $q) {
 			console.log(feedType);
 
 			if(feedType && !(feedType === "all")) {
-				var url = "http://localhost:8080/CollectionsBackendApi/feed/getByUser?id=" 
+				var url = "http://192.168.0.2:8080/CollectionsBackendApi/feed/getByUser?id=" 
 				+ userId + "&feedType=" + feedType + "&callback=JSON_CALLBACK"
 			} else {
-				var url = "http://localhost:8080/CollectionsBackendApi/feed/getByUser?id=" 
+				var url = "http://192.168.0.2:8080/CollectionsBackendApi/feed/getByUser?id=" 
 				+ userId + "&callback=JSON_CALLBACK"
 			}
 

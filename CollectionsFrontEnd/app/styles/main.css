@@ -39,8 +39,8 @@ h6 {
 
 p {
   font-family: "Source Sans Pro", sans-serif;
-  font-weight: 300;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 14px;
   line-height: 1.7em;
   text-rendering: optimizelegibility;
 
@@ -51,6 +51,9 @@ p {
   transition: all 0.3s ease;
 }
 
+a:hover {
+  color: #1abc9c;
+}
 
 .spinner {
   height: 50px
@@ -61,6 +64,9 @@ p {
   background-color: red;
 }
 
+.navbar-nav {
+  margin-left: 35% !important;
+}
 
 .btn-primary {
   background-color: #1abc9c !important;
@@ -76,14 +82,27 @@ p {
   margin-top:28px;
 }
 
+
+.comment p {
+  font-weight: 400;
+}
+
 /*Util*/
 .list-style-none {
   list-style: none;
   padding: 0;
 }
 
+.margin-top-none {
+  margin: 0;
+}
+
 .margin-top {
   margin-top: 28px;
+}
+
+.margin-top-sm {
+  margin-top: 12px;
 }
 
 .margin-top-lg {
@@ -92,6 +111,18 @@ p {
 
 .fixed {
   position: fixed;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.active {
+  color: #1abc9c;
 }
 
 
@@ -115,10 +146,17 @@ p {
   padding-left: 8px;
 }
 
+.filterfeeds-list li {
+  display: inline-block;
+}
 
+
+.embed-container img {
+  max-width: 600px;
+}
 
  
-.view-animate {
+/*.view-animate {
   padding:10px;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -141,4 +179,4 @@ p {
 }
 .view-animate.ng-leave.ng-leave-active {
   left:-100%;
-}
+}*/

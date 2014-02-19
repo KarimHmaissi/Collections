@@ -17,7 +17,6 @@ mainModule.controller('FeedCtrl', function ($scope, $routeParams, feedService) {
 		$scope.feed = result.feed;
 		$scope.posts = result.posts;
 		$scope.Math = window.Math;
-
 	});
 });
 
@@ -37,6 +36,18 @@ mainModule.controller('UserCtrl', function ($scope, $routeParams, feedService) {
 			$scope.posts = result.posts;
 		});
 	}
+
+	$scope.filterFeeds = function(filter) {
+		console.log("filtering feeds");
+		if(filter === "All") {
+			$scope.feedFilter = "";
+		} else {
+			$scope.feedFilter = filter;
+		}
+		
+	}
+
+	$scope.showFilter = false;
 });
 
 mainModule.controller('UserFeedsCtrl', function ($scope, $routeParams, feedService) {
@@ -54,6 +65,16 @@ mainModule.controller('UserFeedsCtrl', function ($scope, $routeParams, feedServi
 			$scope.posts = result.posts;
 		});
 	}
+
+
+});
+
+mainModule.controller('CommentsCtrl', function ($scope, $routeParams, commentsService) {
+	commentsService.get($routeParams.url).then(function(result) {
+		console.log(result); 
+		$scope.comments = result[1].data.children;
+		
+	});
 });
 
 

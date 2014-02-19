@@ -34,7 +34,7 @@
     <div ng-include src="'views/topMenu.html'"></div>
     <div class="container">
       <div class="row">
-        <div class="col-md-3 margin-top">
+        <div class="col-md-3 margin-top hidden-sm hidden-xs">
           <div class="fixed" ng-include src="'views/sideMenu.html'" ng-controller="UserCtrl"></div>
         </div>
         <div class="col-md-9 margin-top view-animate-container">
@@ -61,7 +61,7 @@
     
 
         <!-- build:js scripts/plugins.js -->
-
+        <script src="bower_components/momentjs/min/moment-with-langs.min.js"></script>
         <!-- endbuild -->
 
         <!-- build:js scripts/modules.js -->
@@ -75,8 +75,13 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/services/feedService.js"></script>
+        <script src="scripts/services/commentsService.js"></script>
+        <script src="scripts/services/embedUtilityService.js"></script>
         <script src="scripts/directives/tweetDirective.js"></script>
         <script src="scripts/directives/showVideoDirective.js"></script>
+        <script src="scripts/directives/embedDirective.js"></script>
+        <script src="scripts/directives/embedCommentDirective.js"></script>
+        <script src="scripts/filters/dateTimestampFilter.js"></script>
         <!-- endbuild -->
 </body>
 </html>

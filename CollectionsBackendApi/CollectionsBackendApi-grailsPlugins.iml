@@ -45,6 +45,11 @@
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/jquery-1.10.2.2/grails-app/services" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/jquery-1.10.2.2/grails-app/taglib" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/target/work/plugins/quartz-1.0.1">
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/quartz-1.0.1/src/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/quartz-1.0.1/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/quartz-1.0.1/grails-app/services" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/target/work/plugins/rabbitmq-1.0.0">
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/rabbitmq-1.0.0/src/groovy" isTestSource="false" />
     </content>
@@ -118,6 +123,8 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/twitter4j/twitter4j-stream/3.0.5/twitter4j-stream-3.0.5.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/twitter4j/twitter4j-async/3.0.5/twitter4j-async-3.0.5.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/twitter4j/twitter4j-core/3.0.5/twitter4j-core-3.0.5.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/c3p0/c3p0/0.9.1.1/c3p0-0.9.1.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.2.1/quartz-2.2.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

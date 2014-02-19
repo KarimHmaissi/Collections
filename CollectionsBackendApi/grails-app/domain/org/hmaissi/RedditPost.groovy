@@ -12,10 +12,16 @@ class RedditPost extends Post {
 //    Date postCreated
     String selfTextMarkup
     String title
+    Boolean isSelf
 
 
     static constraints = {
-        selfTextMarkup(maxSize: 10005)
+        selfTextMarkup(maxSize: 30000)
         title(maxSize: 305)
+
+        redditId(maxSize: 30000)
+        author(maxSize: 30000)
+        thumbnail(maxSize: 30000)
+        subredditId(maxSize: 30000)
     }
 }

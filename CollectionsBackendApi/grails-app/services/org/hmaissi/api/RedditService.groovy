@@ -47,34 +47,23 @@ class RedditService {
 
             def posts = []
 
-            try{
-                for(def redditPost: result.data.children) {
 
+            for(def redditPost: result.data.children) {
+                try{
                     def post = new RedditPost()
                     post.feed = feed
-                    post.embedData = "none"
+
+                    if(!(redditPost.data.media == null)) {
+                        post.embedData = redditPost.data.media.oembed.html
+//                        post.embedData = "none"
+                    } else {
+                        post.embedData = "none"
+                    }
+
                     post.redditCommentUrl = "http://reddit.com" + redditPost.data.permalink
                     post.numberOfComments = redditPost.data.num_comments
                     post.link = redditPost.data.url
                     post.postType = feed.feedType
-
-                    //convert reddit utc timestamp to date object
-//                    long redditDate = redditPost.data.created_utc
-//                    def longDate = redditDate.longValue()
-                    //java expects milliseconds
-//                    longDate *= 1000
-
-//                    println redditDate
-//                    Date date = new Date(redditDate * 1000)
-//                    println date.toString()
-
-
-//                    SimpleDateFormat sdf = new SimpleDateFormat();
-//                    sdf.setTimeZone(new SimpleTimeZone(SimpleTimeZone.UTC_TIME, "UTC"));
-//                    Date utcDate = sdf.parse(sdf.format(date));
-//
-//                    println utcDate.getTime()
-//                    println "space"
 
                     post.posted = redditPost.data.created_utc
 
@@ -85,7 +74,7 @@ class RedditService {
                     post.redditDownVotes = redditPost.data.downs
                     post.redditUpvotes = redditPost.data.ups
                     post.title = redditPost.data.title
-
+                    post.isSelf = redditPost.data.is_self
 
                     if(redditPost.data.selftext_html == "" || redditPost.data.selftext_html == null) {
                         post.selfTextMarkup = "none"
@@ -100,22 +89,18 @@ class RedditService {
                     post.score = crawlerService.getScore(post, post.redditScore)
 
                     posts.add(post)
-
                 }
 
-                feed.posts = posts
-                feed.upvotes = 1
-
-                Date date = new Date()
-                feed.score = feed.upvotes + (date.getTime() / 1000 / 60) //millisecond to seconds to minutes
-
-                feed.save(failOnError: true)
-
-            } catch(Exception e) {
-                println "error saving:" + e.message
-                println "error saving:" + e.toString()
+                catch(Exception e) {
+                    println "error saving:" + e.message
+                    println "error saving:" + e.toString()
+                }
             }
+
+            return posts
+
         }
     }
-
 }
+
+

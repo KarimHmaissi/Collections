@@ -1,16 +1,29 @@
-<a href="{{post.link}}"><p><strong>{{post.title}}</p></strong></a>
-<ul class="feed-details-list">
+<a href="{{post.link}}"><strong>{{post.title}}</strong></a>
+<ul class="feed-details-list margin-top-sm">
 	
 	<li ng-switch on="post.thumbnail">
+		
 		<img ng-switch-when="" src="/images/reddit.png" alt="" width="50px" height:"50px">
 		<img ng-switch-when="self" src="/images/reddit.png" alt="" width="50px" height:"50px">
 		<img ng-switch-when="default" src="/images/reddit.png" alt="" width="50px" height:"50px">
 		<img ng-switch-default src="{{post.thumbnail}}" alt="" width="50px" height:"50px">
+		<a embed="" href="#">Show</a>
 	</li>
 
+<!-- 	<li ng-switch on="post.embedData">
+		<div ng-switch-when="none">
+			<a embed="" href="#" gotEmbedData="false" data="{{post.link}}">Show</a>
+	    </div>
+	    <div ng-switch-default>
+	        <a embed="" href="#" gotEmbedData="true" data="{{post.embedData}}">Show</a>
+	    </div>
+	</li>
+ -->
+	
+
 	<li><p>{{post.redditUpvotes}} | {{post.redditDownVotes}}</p></li>
-	<li><a href="{{post.redditCommentUrl}}"><p>{{post.numberOfComments}} comments</p></a></li>
+	<li><a href="#/comments/{{post.redditId}}">{{post.numberOfComments}} comments</a></li>
 	<!-- <li><img src="/images/reddit.png" alt="Reddit Post"></li> -->
-	<li><p>{{post.author}}</p></li>
-	<li><p>{{post.posted}}</p></li>
+	<li><p>Posted {{post.posted | timestamp}}</p></li>
+	<li><p>by {{post.author}}</p></li>
 </ul>

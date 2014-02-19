@@ -20,6 +20,10 @@ angular.module('collectionsFrontEndApp', [
         templateUrl: "views/userFeeds.html",
         controller: "UserFeedsCtrl"
       })
+      .when("/comments/:url", {
+        templateUrl: "views/comments.html",
+        controller: "CommentsCtrl"
+      })
       .otherwise({
         redirectTo: '/'
       });

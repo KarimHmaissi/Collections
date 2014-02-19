@@ -38,7 +38,7 @@ class YoutubeService {
                     assert resp.statusLine.statusCode == 200
                     println "Got response: ${resp.statusLine}"
                     println "Content-Type: ${resp.headers.'Content-Type'}"
-                    save(json, feed)
+                    return buildPosts(json, feed)
                 }
 
                 response.failure = {
@@ -53,13 +53,13 @@ class YoutubeService {
         }
     }
 
-    def save(result, feed) {
+    def buildPosts(result, feed) {
         def posts = []
         println "saving youtube feed"
 
-        try {
-            for(def video : result.feed.entry) {
+        for(def video : result.feed.entry) {
 
+            try {
                 def post = new YoutubePost()
                 post.feed = feed
                 post.embedData = "none"
@@ -88,21 +88,13 @@ class YoutubeService {
                 post.score = crawlerService.getScore(post, getScore(post.numYoutubeViews))
 
                 posts.add(post)
+            } catch (Exception e) {
+
             }
-
-            feed.posts = posts
-            feed.upvotes = 1
-
-            Date date = new Date()
-            feed.score = feed.upvotes + (date.getTime() / 1000 / 60) //millisecond to seconds to minutes
-
-            feed.save(failOnError: true)
-
-        } catch(Exception e) {
-           println "error: " + e.message
-           println "error: " + e.getCause()
-            println e
         }
+
+        return posts
+
     }
 
     private getChannelNameFromUrl(String url) {
@@ -126,13 +118,13 @@ class YoutubeService {
 
     private getScore(numViews) {
         if(numViews == 301) {
-            return 1000
+            return 2000
         }
         if(numViews / 2000 > -1) {
-            return numViews / 2000
+            return numViews / 1000
         }
 
-        return 50
+        return 150
     }
 
 

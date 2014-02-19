@@ -43,6 +43,36 @@ http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://rss1.smashingm
 http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/movies&title=Movies
 
 
+
+
+
+
+
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/adviceanimals&title=adviceanimals
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/AskReddit&title=AskReddit
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/aww&title=aww
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/bestof&title=bestof
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/books&title=books
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/earthporn&title=earthporn
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/explainlikeimfive&title=explainlikeimfive
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/funny&title=funny
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/gaming&title=gaming
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/gifs&title=gifs
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/IAmA&title=IAmA
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/movies&title=movies
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/music&title=music
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/news&title=news
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/pics&title=pics
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/science&title=science
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/technology&title=technology
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/television&title=television
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/todayilearned&title=todayilearned
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/videos&title=videos
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/worldnews&title=worldnews
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com/r/wtf&title=wtf
+
+
+
 http://www.reddit.com/r/unitedkingdom
 
 
@@ -72,6 +102,39 @@ save feeds
 
 
 
+TODO Main
+DEFINITE
+Reddit comment integration
+Embed reddit images/gifs/videos
+Update reddit posts for changes, votes, comments
+Users
+Add feeds from services
+Collections
+Client side feed submit
+Reddit comment thread crawler - find threads for each content item eg rss article
+
+Wyas to sort each feed - 
+	Top/new browse more feed pages -  client side api request to reddit
+	New/Viewcount youtube 
+
+
+Reddit intergration -  add comment etc...
+
+SECONDARY
+upvote and downvote reddit posts
+
+
+Problems:
+Amount of data from reddit
+DB locking/speed
+
+
+
+FRICTIONLESS AS POSSIBLE TO GET INVESTED - dont need account to follow feed
+
+
+
+"C:\Program Files\Java\jdk1.7.0_09\bin\java" -Dgrails.home=C:\grails-2.3.5 "-Dbase.dir=C:\Users\Karim\Desktop\newgrailsapp\Collections Alpha 2\Collections\CollectionsBackendApi" "-Dtools.jar=C:\Program Files\Java\jdk1.7.0_09\lib\tools.jar" -Dgroovy.starter.conf=C:\grails-2.3.5/conf/groovy-starter.conf -Xmx768M -Xms768M -XX:MaxPermSize=256m -XX:PermSize=256m -Djline.WindowsTerminal.directConsole=false -javaagent:C:\grails-2.3.5\lib\org.springsource.springloaded\springloaded-core\jars\springloaded-core-1.1.4.jar -noverify -Dspringloaded=profile=grails -Didea.launcher.port=7532 "-Didea.launcher.bin.path=C:\Program Files\JetBrains\IntelliJ IDEA 13.0\bin" -Dfile.encoding=UTF-8 -classpath "C:\grails-2.3.5\lib\org.codehaus.groovy\groovy-all\jars\groovy-all-2.1.9.jar;C:\grails-2.3.5\dist\grails-bootstrap-2.3.5.jar;C:\Program Files\JetBrains\IntelliJ IDEA 13.0\lib\idea_rt.jar" com.intellij.rt.execution.application.AppMain org.codehaus.groovy.grails.cli.support.GrailsStarter --main org.codehaus.groovy.grails.cli.GrailsScriptRunner --conf C:\grails-2.3.5/conf/groovy-starter.conf run-app
 
 
 

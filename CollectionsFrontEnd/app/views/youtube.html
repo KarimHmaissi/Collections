@@ -1,11 +1,16 @@
-<p><strong><a href="{{post.link}}">{{post.title}}</a></strong></p>
-<a video="" href="#" id="{{post.videoId}}">Show Video</a>
-<ul class="feed-details-list">
+<a href="{{post.link}}"><strong>{{post.title}}</strong></a>
+
+
+
+<ul class="feed-details-list margin-top-sm">
 	<li><a href="{{post.link}}"><img src="{{post.thumbnail}}" alt="" height="50px"></a></li>
+	<li><a embed="" video="true" href="#" >Show Video</a></li>
 	<li><p>Views: {{post.numYoutubeViews}}</p></li>
 	<li><img src="/images/youtube.png" alt="Youtube Post"></li>
-	<li><a href="http://www.youtube.com/user/{{post.author}}"><p>{{post.author}}</p></a></li>
-	<li><p>{{post.posted}}</p></li>
-	<li><a href="{{post.redditCommentUrl}}"><p>{{post.numberOfComments}} comments</p></a></li>
+	<li><a href="{{post.redditCommentUrl}}"><p>{{post.numberOfComments}} comments</a></li>
+	<li><p>Posted {{post.posted | timestamp}}</p></li>
+	<li><a href="http://www.youtube.com/user/{{post.author}}">by {{post.author}}</a></li>
+
+
 </ul>
 <p>{{post.description | limitTo:100}}</p>

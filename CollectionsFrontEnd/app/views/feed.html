@@ -1,21 +1,8 @@
 
+<div class="text-center">
+	<h3 class="margin-top-none">{{feed.title}}</h3>
+	<p><strong>{{feed.feedUrl}}</strong></p>
 
-<!-- 		<p>Filter By</p>
-<ul class="list-style-none">
-	<li><a href="">Youtube<img src="/images/youtube.png" alt="Youtube Post"></a></li>
-	<li><a href="">RSS<img src="/images/rss.png" alt="Youtube Post"></a></li>
-	<li><a href="">Reddit<img src="/images/reddit.png" alt="Youtube Post"></a></li>
-	<li><a href="">Twitter<img src="/images/twitter.png" alt="Youtube Post"></a></li>
-</ul> -->
-
-<!-- <h4>Feed View</h4> -->
-
-<div class="spinner" ng-show="loading"></div>
-
-<h3>{{feed.title}}</h3>
-<p><strong>{{feed.feedUrl}}</strong></p>
-
-<div class="text-left">
 	<ul class="feed-details-list">
 		<li><p>{{feed.upvotes}}</p></li>
 		<li><p>{{feed.feedType}}</p></li>
@@ -23,12 +10,12 @@
 		<li><a href="#" class="btn btn-primary" id="{{feed.id}}" data-follow="">Follow Feed</a></li>
 	</ul>
 </div>
-
-<!-- <ul class="feed-details-list" ng-repeat="post in posts">
-	<li><a href="{{post.link}}"><p>{{post.link}}</p></a></li>
-	<li><p>Post Type: {{post.postType}}</p></li>
-	<li>Comments: {{post.numberOfComments}}</li>
-</ul> -->
+<!-- <ul class="list-style-none feed-details-list text-center">
+  <li><a href="" ng-click="sortFeed('Hot')">Hot</a></li>
+  <li><a href="" ng-click="sortFeed('Top')">Top</a></li>
+  <li><a href="" ng-click="sortFeed('New')">New</a></li>
+</ul>
+ -->
 
 <div ng-include src="'views/posts.html'"></div>
 

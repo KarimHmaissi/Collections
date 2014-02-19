@@ -37,7 +37,7 @@ class RssService {
                     assert resp.statusLine.statusCode == 200
                     println "Got response: ${resp.statusLine}"
                     println "Content-Type: ${resp.headers.'Content-Type'}"
-                    save(json, feed)
+                    return buildPosts(json, feed)
                 }
 
                 response.failure = {
@@ -56,16 +56,17 @@ class RssService {
      * @param result
      * @param feed
      */
-    def save(result, Feed feed) {
+    def buildPosts(result, Feed feed) {
 
-        try {
-            def list = result.responseData.feed.entries
-            if(list.size() > 0) {
 
-                def posts = []
-                println("about to loop over posts")
-                for(int x = 0; x < list.size(); x++) {
+        def list = result.responseData.feed.entries
+        if(list.size() > 0) {
 
+            def posts = []
+            println("about to loop over posts")
+            for(int x = 0; x < list.size(); x++) {
+
+                try {
                     RssPost post = new RssPost();
                     post.feed = feed
                     post.title = list[x].title
@@ -94,22 +95,15 @@ class RssService {
 
                     posts.add(post)
 
+                } catch (Exception e) {
+                    println "error saving rss feed: " + e.message
+                    println "error saving rss feed: " + e.toString()
                 }
-
-                feed.posts = posts
-                feed.upvotes = 1
-
-                Date date = new Date()
-                feed.score = feed.upvotes + (date.getTime() / 1000 / 60) //millisecond to seconds to minutes
-
-                feed.save(failOnError: true)
             }
 
-        }   catch(Exception e) {
-            println "error saving rss feed: " + e.message
-            println "error saving rss feed: " + e.toString()
-
+            return posts
         }
+
 
     }
 
@@ -120,7 +114,7 @@ class RssService {
         def upperBound = (size * 2) - index
         def lowerBound = indexReversed
         def score = random.nextInt(upperBound - lowerBound ) + lowerBound
-        return score * 10
+        return score * 35
     }
 
 }
