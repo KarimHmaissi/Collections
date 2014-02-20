@@ -26,7 +26,7 @@ mainModule.service("feedService", function($http, $q, $angularCacheFactory) {
 
 		get: function() {
 
-			var defer = $q.defer();
+			var defer = $q.defer(),
 				dataCache = $angularCacheFactory.get('dataCache');
 			 
 			if(dataCache.get("/feed")) {
