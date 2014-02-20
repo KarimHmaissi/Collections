@@ -1,10 +1,10 @@
 'use strict';
-
 angular.module('collectionsFrontEndApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'jmdobry.angular-cache'
 ])
   .config(function ($routeProvider) {
     $routeProvider

@@ -105,7 +105,7 @@ save feeds
 TODO Main
 DEFINITE
 Reddit comment integration
-Embed reddit images/gifs/videos
+Embed reddit images/gifs/videos+
 Update reddit posts for changes, votes, comments
 Users
 Add feeds from services
@@ -119,6 +119,10 @@ Wyas to sort each feed -
 
 
 Reddit intergration -  add comment etc...
+
+
+On your feeds page - 
+content feeds, social feeds, collections 
 
 SECONDARY
 upvote and downvote reddit posts

@@ -1,5 +1,6 @@
 var mainModule = angular.module("collectionsFrontEndApp");
 
+
 mainModule.directive("tweet", function($http) {
 	return {
 		restrict: 'A',

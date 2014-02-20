@@ -2,6 +2,7 @@
 
 var mainModule = angular.module("collectionsFrontEndApp");
 
+
 mainModule.service("submitService", function($http) {
 	return {
 		get: function(page) {

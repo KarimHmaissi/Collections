@@ -31,14 +31,16 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ng-include src="'views/topMenu.html'"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 margin-top hidden-sm hidden-xs">
-          <div class="fixed" ng-include src="'views/sideMenu.html'" ng-controller="UserCtrl"></div>
-        </div>
-        <div class="col-md-9 margin-top view-animate-container">
-          <div ng-view="" class="view-animate"></div>
+    <div ng-controller="UserCtrl">
+      <div ng-include src="'views/topMenu.html'"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 margin-top hidden-sm hidden-xs">
+            <div class="fixed" ng-include src="'views/sideMenu.html'"></div>
+          </div>
+          <div class="col-md-9 margin-top view-animate-container">
+            <div ng-view="" class="view-animate"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -57,6 +59,7 @@
 
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-cache/dist/angular-cache.min.js"></script>
     <script src="scripts/vendor/angular-animate.min.js"></script>
     
 
@@ -78,7 +81,6 @@
         <script src="scripts/services/commentsService.js"></script>
         <script src="scripts/services/embedUtilityService.js"></script>
         <script src="scripts/directives/tweetDirective.js"></script>
-        <script src="scripts/directives/showVideoDirective.js"></script>
         <script src="scripts/directives/embedDirective.js"></script>
         <script src="scripts/directives/embedCommentDirective.js"></script>
         <script src="scripts/filters/dateTimestampFilter.js"></script>
