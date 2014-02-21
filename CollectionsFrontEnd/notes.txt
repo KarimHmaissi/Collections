@@ -105,11 +105,13 @@ save feeds
 TODO Main
 DEFINITE
 Reddit comment integration
+Collections
+
 Embed reddit images/gifs/videos+
 Update reddit posts for changes, votes, comments
 Users
 Add feeds from services
-Collections
+
 Client side feed submit
 Reddit comment thread crawler - find threads for each content item eg rss article
 
@@ -123,6 +125,9 @@ Reddit intergration -  add comment etc...
 
 On your feeds page - 
 content feeds, social feeds, collections 
+
+
+
 
 SECONDARY
 upvote and downvote reddit posts

@@ -54,27 +54,7 @@ class FeedController {
     }
 
 
-    //stubbed shows all posts (max: 100
-    def getByUser() {
-
-        def posts
-        def feeds
-
-        if(params.feedType) {
-            posts = Post.findAllByPostType(params.feedType, [sort:"score", order:"desc"])
-            feeds = Feed.list()
-        } else {
-            posts = Post.list(sort:"score", order:"desc", max:100)
-            feeds = Feed.list()
-        }
-
-        def json = [
-                "feeds": feeds,
-                "posts": posts
-        ]
-
-        render "${params.callback}(${json as JSON})"
-    }
+    
 
 
 

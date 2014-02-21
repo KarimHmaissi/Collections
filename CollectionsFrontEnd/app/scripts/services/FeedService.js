@@ -11,7 +11,7 @@ mainModule.service("feedService", function($http, $q, $angularCacheFactory) {
         deleteOnExpire: 'aggressive' // Items will be deleted from this cache right when they expire.
     });
 
-    $http.defaults.cache = $angularCacheFactory.get('dataCache');
+    // $http.defaults.cache = $angularCacheFactory.get('dataCache');
 
 	return {
 
@@ -57,13 +57,13 @@ mainModule.service("feedService", function($http, $q, $angularCacheFactory) {
 
 			if(dataCache.get("/feed/" + id)) {
 
-				defer.resolve(dataCache.get("/getFeed/" + id));
+				defer.resolve(dataCache.get("/feed/" + id));
 			} else {
 
 				$http.jsonp("http://192.168.0.2:8080/CollectionsBackendApi/feed/get?id=" 
 					+ id + "&callback=JSON_CALLBACK")
 				.success(function(result) {
-					dataCache.put("/getFeed/" + id, result);
+					dataCache.put("/feed/" + id, result);
 					defer.resolve(result);
 				})
 				.error(function(result) {
@@ -82,11 +82,11 @@ mainModule.service("feedService", function($http, $q, $angularCacheFactory) {
 
 			if(feedType && !(feedType === "all")) {
 				var cacheKey = "/getByUser/" + userId + "/" + feedType;
-				var url = "http://192.168.0.2:8080/CollectionsBackendApi/feed/getByUser?id=" 
+				var url = "http://192.168.0.2:8080/CollectionsBackendApi/user/getFeedsByUser?id=" 
 				+ userId + "&feedType=" + feedType + "&callback=JSON_CALLBACK"
 			} else {
 				var cacheKey = "/getByUser/" + userId;
-				var url = "http://192.168.0.2:8080/CollectionsBackendApi/feed/getByUser?id=" 
+				var url = "http://192.168.0.2:8080/CollectionsBackendApi/user/getFeedsByUser?id=" 
 				+ userId + "&callback=JSON_CALLBACK"
 			}
 
@@ -130,7 +130,12 @@ mainModule.service("feedService", function($http, $q, $angularCacheFactory) {
 					{id: 12884, title: "LeagueOfSuperCritics", feedType: "youtube"},
 					{id: 12935, title: "CGPGrey", feedType: "youtube"}
 				],
-				userName: "Karim Hmaissi"
+				userName: "Karim Hmaissi",
+				hasTwitter: true,
+				twitterDetails: {
+					userName: "KarimHmaissi"
+				}
+
 
 			}
 

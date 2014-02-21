@@ -143,8 +143,8 @@ rabbitmq {
 twitter {
     disableTwitter4jController = true
     'default' {
-        OAuthConsumerKey = 'ZdrnQrKzgtjJAY94SKkGdQ'
-        OAuthConsumerSecret = 'uF4gEr6EEvsxbHXrwU7ewcDKT4qtK3mQfH6o1o03eg'
+        OAuthConsumerKey = 'GQ38pYWCIT1NuSAXveLtQ'
+        OAuthConsumerSecret = 'CQ0Et6lD4HwCnc2fshrFCBdvIkl1XSCXOP7m6NLUqX8'
         OAuthAccessToken = '469409863-La43UocW1CwGW31Nc0tyhg5WIz75OVX2l1YfgcqE'
         OAuthAccessTokenSecret = 'k5VW2qYLm7o8Ozx3olSxCEI4G6ADmpJ1v5u0pmIW9heXi'
     }

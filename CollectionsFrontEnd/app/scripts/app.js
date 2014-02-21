@@ -24,6 +24,10 @@ angular.module('collectionsFrontEndApp', [
         templateUrl: "views/comments.html",
         controller: "CommentsCtrl"
       })
+      .when("/twitterFeed", {
+        templateUrl: "views/twitter.html",
+        controller: "TwitterCtrl"
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -9,11 +9,47 @@ import twitter4j.QueryResult
 import twitter4j.ResponseList
 import twitter4j.Status
 
+import twitter4j.Twitter
+import twitter4j.TwitterException
+
 @Transactional
 class TwitterService {
 
     def twitter4jService
-    def crawlerService
+
+    def downloadTweets() {
+        //stubbed requires auth etc..
+        Twitter twitter = twitter4jService.connect()
+
+        List<Status> statuses = twitter.getHomeTimeline()
+
+        def jsonStatuses = []
+
+        for(def status: statuses) {
+            //text
+            //tweetowner
+            //link
+            //posted
+            def jsonStatus = [
+                tweetText: status.getText(),
+                tweetOwner: status.getUser().getScreenName(),
+                tweetLink: "http://twitter.com/status/" + status.getId(),
+                tweetId: status.getId() + "",
+                posted: status.getCreatedAt(),
+            ]
+
+            println status.getId()
+
+            jsonStatuses.add(jsonStatus)
+
+        }
+        
+        return jsonStatuses
+
+
+    }    
+
+    /*def crawlerService
 
     def crawl(Feed feed) {
 
@@ -79,6 +115,6 @@ class TwitterService {
         filePart = filePart.replace("/", "")
         println filePart
         return filePart
-    }
+    }*/
 
 }

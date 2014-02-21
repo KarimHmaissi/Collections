@@ -83,4 +83,15 @@ mainModule.controller('CommentsCtrl', function ($scope, $routeParams, commentsSe
 	});
 });
 
+mainModule.controller('TwitterCtrl', function ($scope, $routeParams, twitterService) {
+	twitterService.getTweets($scope.user.twitterDetails.userName).then(function(result) {
+		console.log(result); 
+		$scope.tweets = result.tweets;
+		console.log($scope.tweets);
+		// console.log("calling twttr.widgets.load()");
+		// twttr.widgets.load();
+	});
+});
+
+
 

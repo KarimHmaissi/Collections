@@ -1,1 +1,12 @@
-<blockquote class="twitter-tweet"><p>{{post.tweetText}}</p> (@{{post.tweetOwner}}) <a href="{{post.link}}" data-datetime="{{post.posted}}"></a></blockquote>
+<h3 class="margin-top-none">Your Twitter Feed</h3>
+<p><strong>Tweets from your twitter followers.</strong></p>
+
+
+
+<div ng-repeat="tweet in tweets">
+	<blockquote class="twitter-tweet"><p>{{tweet.tweetText}}</p> (@{{tweet.tweetOwner}}) <a href="https://twitter.com/{{tweet.tweetOwner}}/statuses/{{tweet.tweetId}}" data-datetime="{{tweet.posted}}"></a></blockquote>
+</div>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+ <div tweet=""></div> <!--Calls twttr.widgets.load();-->
