@@ -3,6 +3,7 @@ package org.hmaissi.api
 import grails.transaction.Transactional
 import org.hmaissi.Feed
 import org.hmaissi.Post
+import org.hmaissi.FeedCollection
 import java.net.URI
 import java.text.SimpleDateFormat
 
@@ -87,8 +88,36 @@ class CrawlerService {
 
         if(posts.size() > 0) {
 
-            saveFeed(feed, posts, update)
+            return saveFeed(feed, posts, update)
         }
+
+        return null
+    }
+
+    def crawlFeedCollection(feeds, title) {
+
+        try {
+            FeedCollection feedCollection = new FeedCollection()
+            feedCollection.upvotes = 1
+            Date date = new Date()
+            feedCollection.score = feedCollection.upvotes + (date.getTime() / 1000 / 60)
+            feedCollection.title = title
+
+            for(def feed : feeds) {
+                def feedObject = crawlFeed(feed.feedUrl, getFeedType(feed.feedUrl), feed.title)
+                Thread.sleep(30000)
+                if(feedObject != null) {
+                    feedCollection.addToFeeds(feedObject)
+                }
+            }
+
+            feedCollection.save(failOnError: true)
+
+        } catch(Exception e) {
+            println "error: " + e.message
+            println "error: " + e.getCause()
+        }
+
     }
 
     def saveFeed(Feed feed, posts, update) {
@@ -108,11 +137,13 @@ class CrawlerService {
                             feed.addToPosts(post)
                         }
                     } else {
+                        println post.link
                         feed.addToPosts(post)
+
                     }
                 }
-
-                feed.save(failOnError: true)
+                println feed.title
+                return feed.save(failOnError: true)
 
             } else {
 
@@ -121,7 +152,7 @@ class CrawlerService {
                 Date date = new Date()
                 feed.score = feed.upvotes + (date.getTime() / 1000 / 60) //millisecond to seconds to minutes
 
-                feed.save(failOnError: true)
+                return feed.save(failOnError: true)
             }
 
         } catch(Exception e ) {

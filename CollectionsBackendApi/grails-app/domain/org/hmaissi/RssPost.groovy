@@ -7,4 +7,9 @@ class RssPost extends Post {
 
     static constraints = {
     }
+
+    static mapping = {
+        author type: "text"
+        title type: "text"
+    }
 }

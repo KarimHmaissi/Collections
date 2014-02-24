@@ -21,6 +21,15 @@ mainModule.controller('FeedCtrl', function ($scope, $routeParams, feedService) {
 	});
 });
 
+mainModule.controller('CollectionCtrl', function ($scope, $routeParams, feedService) {
+	console.log("collections controller running");
+	feedService.getCollection($routeParams.id).then(function(result) {
+		$scope.feed = result.feed;
+		$scope.posts = result.posts;
+		$scope.Math = window.Math;
+	});
+});
+
 
 mainModule.controller('UserCtrl', function ($scope, $routeParams, feedService) {
 	// feedService.getFeedByUser($routeParams.id).then(function(result) {

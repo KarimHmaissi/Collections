@@ -20,6 +20,10 @@ angular.module('collectionsFrontEndApp', [
         templateUrl: "views/userFeeds.html",
         controller: "UserFeedsCtrl"
       })
+      .when("/collection/:id", {
+        templateUrl: "views/collections.html",
+        controller: "CollectionCtrl"
+      })
       .when("/comments/:url", {
         templateUrl: "views/comments.html",
         controller: "CommentsCtrl"
@@ -32,3 +36,4 @@ angular.module('collectionsFrontEndApp', [
         redirectTo: '/'
       });
   });
+

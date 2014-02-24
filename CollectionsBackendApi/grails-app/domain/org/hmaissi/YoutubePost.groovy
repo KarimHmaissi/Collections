@@ -14,4 +14,12 @@ class YoutubePost extends Post {
     static constraints = {
         description(maxSize: 10005)
     }
+
+    static mapping = {
+        title type: "text"
+        videoId type: "text"
+        thumbnail type: "text"
+        author type: "text"
+        description type: "text"
+    }
 }

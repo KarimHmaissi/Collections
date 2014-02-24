@@ -17,4 +17,10 @@ class Feed {
         submitterId nullable:true
         feedUrl unique: true
     }
+
+    static mapping = {
+        feedUrl type: "text"
+        feedType type: "text"
+        title type: "text"
+    }
 }

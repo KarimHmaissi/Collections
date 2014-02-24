@@ -11,4 +11,9 @@ class TweetPost extends Post {
 
     static constraints = {
     }
+
+    static mapping = {
+        tweetText type: "text"
+        tweetOwner type: "text"
+    }
 }

@@ -16,12 +16,21 @@ class RedditPost extends Post {
 
 
     static constraints = {
-        selfTextMarkup(maxSize: 30000)
-        title(maxSize: 305)
+//        selfTextMarkup(maxSize: 30000)
+//        title(maxSize: 305)
+//
+//        redditId(maxSize: 30000)
+//        author(maxSize: 30000)
+//        thumbnail(maxSize: 30000)
+//        subredditId(maxSize: 30000)
+    }
 
-        redditId(maxSize: 30000)
-        author(maxSize: 30000)
-        thumbnail(maxSize: 30000)
-        subredditId(maxSize: 30000)
+    static mapping = {
+        redditId type: "text"
+        author type: "text"
+        thumbnail type: "text"
+        subredditId type: "text"
+        selfTextMarkup type: "text"
+        title type: "text"
     }
 }

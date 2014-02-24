@@ -131,6 +131,7 @@ content feeds, social feeds, collections
 
 SECONDARY
 upvote and downvote reddit posts
+Link underneath every youtube video to all posters videos - down the rabbit hole, keep users on the site and not push them over to youtube
 
 
 Problems:
