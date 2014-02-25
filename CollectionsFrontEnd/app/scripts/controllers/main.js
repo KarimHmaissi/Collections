@@ -19,6 +19,7 @@ mainModule.controller('FeedCtrl', function ($scope, $routeParams, feedService) {
 		$scope.posts = result.posts;
 		$scope.Math = window.Math;
 	});
+
 });
 
 mainModule.controller('CollectionCtrl', function ($scope, $routeParams, feedService) {
@@ -26,7 +27,9 @@ mainModule.controller('CollectionCtrl', function ($scope, $routeParams, feedServ
 	feedService.getCollection($routeParams.id).then(function(result) {
 		$scope.feed = result.feed;
 		$scope.posts = result.posts;
+		$scope.mashupFeeds = result.feeds;
 		$scope.Math = window.Math;
+		console.log(result.feeds);
 	});
 });
 
@@ -101,6 +104,33 @@ mainModule.controller('TwitterCtrl', function ($scope, $routeParams, twitterServ
 		// twttr.widgets.load();
 	});
 });
+
+mainModule.controller('NewMashupCtrl', function ($scope, feedService) {
+	feedService.get().then(function(result) {
+		$scope.feeds = result;
+	});
+
+	$scope.title = "Your new mashup";
+	$scope.mashupFeeds = [];
+	$scope.showfeeds = true;
+
+	$scope.preview = function() {
+		
+		var ids = [];
+		for(var x = 0; x < $scope.mashupFeeds.length; x++) {
+			ids.push($scope.mashupFeeds[x].id);
+		}
+
+		feedService.getPostsByFeedIds($scope.title, ids).then(function(result) {
+			$scope.posts = result.posts;
+			$scope.showfeeds = false;
+		});
+	};
+
+
+	
+});
+
 
 
 

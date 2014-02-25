@@ -28,6 +28,10 @@ angular.module('collectionsFrontEndApp', [
         templateUrl: "views/comments.html",
         controller: "CommentsCtrl"
       })
+      .when("/newMashup", {
+        templateUrl: "views/new.html",
+        controller: "NewMashupCtrl"
+      })
       .when("/twitterFeed", {
         templateUrl: "views/twitter.html",
         controller: "TwitterCtrl"

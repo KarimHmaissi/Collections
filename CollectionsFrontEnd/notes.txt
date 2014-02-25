@@ -137,6 +137,7 @@ Link underneath every youtube video to all posters videos - down the rabbit hole
 Problems:
 Amount of data from reddit
 DB locking/speed
+Follow button - passing scope to directive attrs.id
 
 
 

@@ -55,6 +55,39 @@ class FeedController {
 
     }
 
+    def getPostsByIds() {
+        println request.JSON
+
+        //def jsonSlurper = new JsonSlurper()
+        //def result = jsonSlurper.parseText(request.JSON)
+        println "result parsed: "
+        //println request.JSON.get("ids")
+
+        //def ids = request.JSON.get("ids")
+
+        println params.ids
+
+        if(params.ids != null) {
+
+            def posts = []
+
+            for(def id : params.ids) {
+                def feed = Feed.get(id)
+                if(feed) posts += Post.findAllByFeed(feed); 
+            }
+
+            def json = [
+                "posts": posts
+            ]
+            
+            render "${params.callback}(${json as JSON})"
+
+        } else {
+            render "${params.callback}(${[error:"error"] as JSON})"
+        }
+
+    }
+
     def getCollection() {
         if(params.long("id") > 0) {
             def collection = FeedCollection.get(params.long("id"))
@@ -113,6 +146,7 @@ class FeedController {
 
                 def json = [
                         "feed": collection,
+                        "feeds": feeds,
                         "posts": allPosts
                 ]
                 render "${params.callback}(${json as JSON})"
