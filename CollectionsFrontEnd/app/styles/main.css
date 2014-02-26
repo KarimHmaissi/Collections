@@ -55,6 +55,9 @@ a:hover {
   color: #1abc9c;
 }
 
+
+
+
 .spinner {
   height: 50px
   width: 50px;
@@ -64,9 +67,14 @@ a:hover {
   background-color: red;
 }
 
+
+
+
 .navbar-nav {
   margin-left: 35% !important;
 }
+
+
 
 .btn-primary {
   background-color: #1abc9c !important;
@@ -76,6 +84,13 @@ a:hover {
 .btn-primary:hover {
   background-color: #16a085 !important;
 }
+
+.btn-uniform-size {
+  width: 150px;
+}
+
+
+
 
 
 .post {
@@ -123,6 +138,10 @@ a:hover {
 
 .active {
   color: #1abc9c;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 .transition-all {
@@ -189,3 +208,14 @@ a:hover {
 .view-animate.ng-leave.ng-leave-active {
   left:-100%;
 }*/
+
+
+/*new*/
+input {
+  padding: 5px 10px;
+  line-height: 1.5;
+  font-size: 1.4em;
+  width: 100%;
+  border-color: #34495e;
+  border: 1px solid;
+}

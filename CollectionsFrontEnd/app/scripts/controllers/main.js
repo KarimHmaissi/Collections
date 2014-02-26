@@ -113,6 +113,7 @@ mainModule.controller('NewMashupCtrl', function ($scope, feedService) {
 	$scope.title = "Your new mashup";
 	$scope.mashupFeeds = [];
 	$scope.showfeeds = true;
+	
 
 	$scope.preview = function() {
 		
@@ -127,6 +128,48 @@ mainModule.controller('NewMashupCtrl', function ($scope, feedService) {
 		});
 	};
 
+	//hide search by default
+	$scope.showSearch = true;
+	$scope.showSubmit = false;
+	$scope.editTitle = false;
+
+	$scope.filterFeeds = function(filter) {
+		console.log("filtering feeds");
+		if(filter === "All") {
+			$scope.feedFilter = "";
+		} else {
+			$scope.feedFilter = filter;
+		}
+		
+	}
+
+	$scope.submit = function(title, url) {
+		feedService.submitFeed(title, url).then(function(result) {
+			console.log(result);
+			feedService.get().then(function(result) {
+				$scope.feeds = result;
+			});
+		});
+	};
+
+	$scope.save = function() {
+		var ids = [];
+		for(var x = 0; x < $scope.mashupFeeds.length; x++) {
+			ids.push($scope.mashupFeeds[x].id);
+		}
+		//add to user.collections
+		//send back to db
+		feedService.submitMashup($scope.title, ids).then(function(result) {
+			console.log(result);
+			// $scope.$apply(function() { 
+				if(result.id !== undefined || result.id !== null) 
+					$scope.user.collections.push({id: result.id, title: $scope.title});
+				// $location.path("/collection/" + result.id); 
+			// });
+			
+
+		});
+	}
 
 	
 });

@@ -2,10 +2,13 @@ package org.hmaissi.api
 
 import grails.converters.JSON
 import grails.validation.ValidationException
+import org.codehaus.jackson.map.ObjectMapper
+import org.hibernate.criterion.CriteriaSpecification
 import org.hmaissi.Feed
 import org.hmaissi.FeedCollection
 import org.hmaissi.Post
 import org.hmaissi.utility.CriteriaAggregator
+
 
 class FeedController {
 
@@ -13,13 +16,39 @@ class FeedController {
 //        params.max = Math.min(max ?: 10, 100)
 //        params.sort = "score"
 //        params.order = "desc"
-
-        def feedList =  Feed.list()
+//        def today = new Date()
+//        println today
+//        def feedList =  Feed.list()
+//        println today
 //        def json = [
 //                "feed": feedList
 //        ]
 //        render json as JSON
-        render "${params.callback}(${feedList as JSON})"
+
+
+        def c = Feed.createCriteria()
+        def feeds = c.list {
+            resultTransformer(CriteriaSpecification.ALIAS_TO_ENTITY_MAP)
+            projections {
+                property("id", "id")
+                property("feedUrl", "feedUrl")
+                property("feedType", "feedType")
+                property("upvotes", "upvotes")
+                property("score", "score")
+                property("submitterId", "submitterId")
+                property("title", "title")
+            }
+        }
+
+//        println feeds
+        
+        ObjectMapper mapper = new ObjectMapper()
+        String jsonString = mapper.writeValueAsString(feeds)
+
+//        println jsonString
+
+        response.contentType = "text/json"
+        render "${params.callback}(${jsonString})"
 
     }
 
@@ -72,8 +101,24 @@ class FeedController {
             def posts = []
 
             for(def id : params.ids) {
+                println id
                 def feed = Feed.get(id)
-                if(feed) posts += Post.findAllByFeed(feed); 
+                if(feed) {
+                    println "found feed gettings posts"
+                    posts += Post.findAllByFeed(feed); 
+                } else {
+                    println "couldnt find feed requested"
+                }
+            }
+
+            //sort by score
+            posts.sort { a, b ->
+                a.score <=> b.score
+            }
+
+            //get first 100 posts
+            if(!(posts.size() < 100)) {
+                posts = posts[posts.size() - 101..posts.size() - 1]
             }
 
             def json = [
@@ -125,6 +170,8 @@ class FeedController {
                     }
                 }*/
 
+                def now = new Date()
+                println now
                 def feeds = Feed.getAll(collection.feeds.id)
 
                 def allPosts = []
@@ -141,7 +188,8 @@ class FeedController {
 
                 //get first 100 posts
                 allPosts = allPosts[allPosts.size() - 101..allPosts.size() - 1]
-
+                def later = new Date()
+                println later
 
 
                 def json = [

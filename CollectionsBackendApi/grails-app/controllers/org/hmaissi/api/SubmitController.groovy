@@ -7,7 +7,7 @@ import groovy.json.JsonSlurper
 class SubmitController {
     def crawlerService
 
-    static allowedMethods = [submitCollection:['POST']]
+    //static allowedMethods = [submitCollection:['POST']]
 
     def index() {
         def feedUrl = params.feedUrl
@@ -35,14 +35,30 @@ class SubmitController {
 
             //def jsonSlurper = new JsonSlurper()
             //def result = jsonSlurper.parseText(request.JSON)
-            println "result parsed: "
-            println request.JSON.get("title")
-            println request.JSON.get("feeds")
+            //println "result parsed: "
+            //println request.JSON.get("title")
+            //println request.JSON.get("feeds")
 
 
-            crawlerService.crawlFeedCollection(request.JSON.get("feeds"), request.JSON.get("title"))
-            def message = [message:"successfully added feed"]
-            render message as JSON
+            //def id = crawlerService.crawlFeedCollection(request.JSON.get("feeds"), request.JSON.get("title"))
+
+
+            println "received submit collection request"
+            println params.title
+            println params.feeds
+
+            //def slurper = new JsonSlurper()
+            //def feeds = slurper.parseText("{feeds: " + params.feeds + "}")
+            //println "{feeds: " + params.feeds + "}"
+            //println feeds
+            def feeds = [params.feeds].flatten().findAll{ it != null }
+            println feeds
+
+            def id = crawlerService.crawlFeedCollection(params.title, feeds)
+
+            def message = [message:"successfully added feed", id: id]
+            //render message as JSON
+            render "${params.callback}(${message as JSON})"
             
         } catch(Exception e) {
             def error = [error:"error adding feed"]

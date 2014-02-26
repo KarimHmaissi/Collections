@@ -61,6 +61,11 @@ grails.project.dependency.resolution = {
         compile "org.twitter4j:twitter4j-core:3.0.5"
         compile "org.twitter4j:twitter4j-async:3.0.5"
         compile "org.twitter4j:twitter4j-stream:3.0.5"
+
+//        compile 'org.codehaus.jackson:jackson-core-asl:2.2.3'
+//        compile 'org.codehaus.jackson:jackson-mapper-asl:2.23'
+        compile 'org.codehaus.jackson:jackson-core-asl:1.8.3'
+        compile 'org.codehaus.jackson:jackson-mapper-asl:1.8.3'
     }
 
     plugins {

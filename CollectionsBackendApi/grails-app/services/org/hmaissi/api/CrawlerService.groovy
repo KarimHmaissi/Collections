@@ -53,8 +53,8 @@ class CrawlerService {
     }
 
     def crawlFeed(feedUrl, feedType, title) {
-        //check if feed is already in DB
-        def feeds = Feed.findAllByTitle(title)
+        //check if feed is already in DB TODO FINDALLBYLINK would be better
+        def feeds = Feed.findAllByFeedUrl(feedUrl)
         def update = false;
         def feed
 
@@ -94,7 +94,7 @@ class CrawlerService {
         return null
     }
 
-    def crawlFeedCollection(feeds, title) {
+    def crawlFeedCollection(title, feeds) {
 
         try {
             FeedCollection feedCollection = new FeedCollection()
@@ -104,14 +104,23 @@ class CrawlerService {
             feedCollection.title = title
 
             for(def feed : feeds) {
-                def feedObject = crawlFeed(feed.feedUrl, getFeedType(feed.feedUrl), feed.title)
-                Thread.sleep(30000)
-                if(feedObject != null) {
-                    feedCollection.addToFeeds(feedObject)
+                println feed
+                def feedCheck = Feed.get(feed.toInteger())
+                def newFeed = null
+                print feedCheck
+                /*if(feedCheck != null) {
+                    newFeed = feedCheck.get(0)
+                } else {
+                    //newFeed = crawlFeed(feed.feedUrl, getFeedType(feed.feedUrl), feed.title)
+                }*/
+
+                //Thread.sleep(6000)
+                if(feedCheck != null) {
+                    feedCollection.addToFeeds(feedCheck)
                 }
             }
-
-            feedCollection.save(failOnError: true)
+            println "saving feed collection"
+            return feedCollection.save(failOnError: true).id
 
         } catch(Exception e) {
             println "error: " + e.message

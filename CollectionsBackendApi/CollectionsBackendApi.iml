@@ -94,6 +94,8 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/twitter4j/twitter4j-core/3.0.5/twitter4j-core-3.0.5.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/c3p0/c3p0/0.9.1.1/c3p0-0.9.1.1.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.2.1/quartz-2.2.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-mapper-asl/1.8.3/jackson-mapper-asl-1.8.3.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-core-asl/1.8.3/jackson-core-asl-1.8.3.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -101,8 +103,7 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="CollectionsBackendApi-grailsPlugins" />
-    <orderEntry type="library" name="jdom-1.0" level="project" />
-    <orderEntry type="library" name="rome-1.0" level="project" />
+    <orderEntry type="library" name="jackson-core-2.2.3" level="project" />
   </component>
 </module>
 

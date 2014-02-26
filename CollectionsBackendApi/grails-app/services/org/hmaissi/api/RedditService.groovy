@@ -23,7 +23,7 @@ class RedditService {
 
                 uri.query = [limit:50]
 
-                headers.'User-Agent' = "Collections"
+                headers.'User-Agent' = "Feed crawler bot"
                 headers.Accept = 'application/json'
 
                 response.success = { resp, json ->

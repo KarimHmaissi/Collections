@@ -82,8 +82,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="grails-2.3.5" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="jdom-1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="rome-1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="jackson-core-2.2.3" level="project" />
     <orderEntry type="module-library" exported="">
       <library name="Grails User Library (CollectionsBackendApi-grailsPlugins)">
         <CLASSES>
@@ -125,6 +124,8 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/twitter4j/twitter4j-core/3.0.5/twitter4j-core-3.0.5.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/c3p0/c3p0/0.9.1.1/c3p0-0.9.1.1.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.2.1/quartz-2.2.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-mapper-asl/1.8.3/jackson-mapper-asl-1.8.3.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-core-asl/1.8.3/jackson-core-asl-1.8.3.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
