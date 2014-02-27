@@ -1,0 +1,12 @@
+<ul class="list-style-none">
+	<li ng-repeat="comment in comments" id="{{comment.data.id}}" class="margin-top">
+		<ul class="feed-details-list font-light">
+			<li><a href="http://www.reddit.com/user/{{comment.data.author}}">{{comment.data.author}}</a></li>
+			<li><p>{{comment.data.ups - comment.data.downs}}</p></li>
+			<li><p>{{comment.data.created_utc |timestamp}}</p></li>
+			<li><p>({{comment.data.ups}} | {{comment.data.downs}})</p></li>
+			
+		</ul>
+		<div comment="" data="{{comment.data.body_html}}" class="comment"></div>
+	</li>
+</ul>

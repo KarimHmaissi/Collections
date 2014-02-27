@@ -1,0 +1,24 @@
+<div class="row">
+	<div class="col-md-9 transition-all" id="left-slide">
+		<div class="text-center">
+			<h3 class="margin-top-none">{{feed.title}}</h3>
+			<p><strong>This feed is composed of multiple feeds. <a href="" slide="" left="left-slide" right="right-slide">View Feeds</a></strong></p>
+
+			<ul class="feed-details-list">
+				<li><p>{{feed.upvotes}}</p></li>
+				<li><a href="#/user/{{feed.submitterId}}">{{feed.submitter}}</a></li>
+				<li><a href="#" class="btn btn-primary" id="{{feed.id}}" data-follow="">Follow Feed</a></li>
+			</ul>
+		</div>
+
+		<div ng-include src="'views/posts.html'"></div>
+	</div>
+
+	<div class="col-md-3 transition-all">
+		<h4>Feeds in </h4> <h5>{{feed.title}}</h5>
+		<div ng-include class="margin-top-lg" src="'views/mashupFeedPreview.html'"></div>
+	</div>
+</div>
+
+
+

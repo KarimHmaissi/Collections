@@ -1,0 +1,48 @@
+<h4>Your Feeds</h4>
+
+<!-- 		<p>Filter By</p>
+<ul class="list-style-none">
+	<li><a href="">Youtube<img src="/images/youtube.png" alt="Youtube Post"></a></li>
+	<li><a href="">RSS<img src="/images/rss.png" alt="Youtube Post"></a></li>
+	<li><a href="">Reddit<img src="/images/reddit.png" alt="Youtube Post"></a></li>
+	<li><a href="">Twitter<img src="/images/twitter.png" alt="Youtube Post"></a></li>
+</ul> -->
+
+<ul class="list-style-none feed-list-user">
+
+	<li class="margin-top-lg"><strong>Favourites</strong></li>
+	<li ng-switch on="user.hasTwitter">
+		<a href="#/twitterFeed" ng-switch-when="true">Your Twitter Feed</a>
+		<p ng-switch-default>No social feeds</p>
+	</li>
+	<li><a href="#/userFeed/0" class="">Your Feed</a></li>
+
+	<li class="margin-top-sm"><strong>Feed Mashups</strong></li>
+	<li ng-repeat="feed in user.collections">
+		<a href="#/collection/{{feed.id}}">{{feed.title}}</a>
+	</li>
+
+	<li class="margin-top-sm">
+		<a href="" ng-class="{active: showFilter}" ng-click="showFilter = !showFilter"><strong>Filter feeds</strong></a href="">
+		<ul class="list-style-none filterfeeds-list" ng-show="showFilter">
+			<li><a href="" ng-click="filterFeeds('All')">All</a></li>
+			<li><a href="" ng-click="filterFeeds('Rss')">Rss</a></li>
+			<li><a href="" ng-click="filterFeeds('Reddit')">Reddit</a></li>
+		</ul>
+		<ul class="list-style-none filterfeeds-list" ng-show="showFilter">
+			<li><a href="" ng-click="filterFeeds('Youtube')">Youtube</a></li>
+			<li><a href="" ng-click="filterFeeds('Twitter')">Twitter</a></li>
+		</ul>
+	</li>
+
+	<!-- <li class="margin-top-sm"><p>Followed feeds</p></li> -->
+	
+
+	<li class=""><strong>Feeds</strong></li>
+	<li ng-repeat="feed in user.feeds | filter: {feedType: feedFilter}">
+		<a href="#/feed/{{feed.id}}">{{feed.title}}</a>
+	</li>
+
+	
+</ul>
+

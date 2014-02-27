@@ -1,0 +1,69 @@
+<div class="row">
+	<div class="col-md-9 transition-all" id="left-slide">
+		<div class="text-center">
+			<h3 class="margin-top-none">{{title}}</h3>
+
+			<label for="mashup-title" class="margin-top-sm pointer" ng-click="editTitle = !editTitle">Edit Mashup title</label>
+			<input type="text" ng-model="title" id="mashup-title" class="text-center" ng-show="editTitle">
+
+			<p class="margin-top"><strong>Add feeds to your new mashup. Click preview to check out your mashup!</strong></p>
+
+			<ul class="feed-details-list">
+				<li><a href="" class="btn btn-primary btn-uniform-size" ng-click="save()">Save and Follow</a></li>
+				<li><a href="" class="btn btn-primary btn-uniform-size" ng-click="preview()">Preview</a></li>
+				<li><a href="" class="btn btn-primary btn-uniform-size" ng-click="showfeeds = true">Feeds</a></li>
+			</ul>
+		</div>
+
+		
+
+		<div ng-show="showfeeds">
+			<div class="text-center margin-top">
+
+<!-- 				<p class="pointer" ng-click="showSubmit = !showSubmit">Submit new feed</p>
+<div ng-show="showSubmit">
+	<label for="submit-feed" class="pointer">Url</label>
+	<p>For a blog title</p>
+	<input type="text" id="submit-feed" ng-model="url">
+
+	<label for="submit-feed"  class="pointer">Title</label>
+	<p>For a blog title</p>
+	<input type="text" id="submit-feed" ng-model="feedTitle" >
+
+	<a href="" class="btn btn-primary margin-top-sm" ng-click="submit(feedTitle,url)">Submit</a>
+</div> -->
+
+				<div class="margin-top">
+					<label for="search-feeds" ng-click="showSearch = !showSearch" class="pointer">Search</label>
+					<!-- <p>For a blog title</p> -->
+					<input type="text" id="search-feeds" ng-model="search.$" ng-show="showSearch" class="text-center">
+				</div>
+
+				
+				
+				<!-- <div class="margin-top-sm">
+					<a href="" ng-class="{active: showFilter}" ng-click="showFilter = !showFilter"><strong>Filter feeds</strong></a href="">
+					<ul class="list-style-none filterfeeds-list" ng-show="showFilter">
+						<li><a href="" ng-click="filterFeeds('All')">All</a></li>
+						<li><a href="" ng-click="filterFeeds('Rss')">Rss</a></li>
+						<li><a href="" ng-click="filterFeeds('Reddit')">Reddit</a></li>
+					</ul>
+					<ul class="list-style-none filterfeeds-list" ng-show="showFilter">
+						<li><a href="" ng-click="filterFeeds('Youtube')">Youtube</a></li>
+						<li><a href="" ng-click="filterFeeds('Twitter')">Twitter</a></li>
+					</ul>
+				</div> -->
+			</div>
+
+			<div class="margin-top" ng-include src="'views/feeds.html'"></div>
+		</div>
+		<div ng-show="!showfeeds">
+			<div ng-include src="'views/posts.html'"></div>
+		</div>
+	</div>
+
+	<div class="col-md-3 transition-all">
+		<h4>Feeds in </h4> <h5>{{title}}</h5>
+		<div ng-include class="margin-top-lg" src="'views/mashupFeedPreview.html'"></div>
+	</div>
+</div>

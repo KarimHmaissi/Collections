@@ -1,0 +1,13 @@
+<ul class="list-style-none">
+  <li class="margin-top-sm">
+    <a href="" ng-class="{active: showFilter}" ng-click="showFilter = !showFilter">
+      <strong>Filter feeds</strong>
+    </a href="">
+  </li>
+
+  <!-- <li class="margin-top-sm"><p>Followed feeds</p></li> -->
+  <li class=""><strong>Feeds</strong></li>
+  <li ng-repeat="feed in mashupFeeds">
+    <a href="#/feed/{{feed.id}}">{{feed.title}}</a>  <a href="#" class="" id="{{feed.id}}" title="{{feed.title}}" type="{{feed.feedType}}" add="">Remove</a>
+  </li>
+</ul>

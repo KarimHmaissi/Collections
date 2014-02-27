@@ -1,0 +1,21 @@
+<h3 class="margin-top-none">Your Feed</h3>
+<p><strong>The latest and greatest posts from your followed feeds</strong></p>
+
+<!-- <ul class="list-style-none feed-details-list text-center">
+  <li><a href="" ng-click="sortFeed('Hot')">Hot</a></li>
+  <li><a href="" ng-click="sortFeed('Top')">Top</a></li>
+  <li><a href="" ng-click="sortFeed('New')">New</a></li>
+</ul> -->
+
+<ul class="list-style-none feed-details-list">
+  <li><a href="" ng-click="getFeedByType('all')">All</a></li>
+  <li><a href="" ng-click="getFeedByType('rss')">RSS</a></li>
+  <li><a href="" ng-click="getFeedByType('reddit')">Reddit</a></li>
+  <li><a href="" ng-click="getFeedByType('youtube')">Youtube</a></li>
+  <li><a href="" ng-click="getFeedByType('twitter')">Twitter</a></li>
+</ul>
+
+<div ng-include src="'views/posts.html'"></div>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
