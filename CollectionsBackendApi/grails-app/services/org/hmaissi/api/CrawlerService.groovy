@@ -1,11 +1,6 @@
 package org.hmaissi.api
 
 import grails.transaction.Transactional
-import org.hmaissi.Feed
-import org.hmaissi.Post
-import org.hmaissi.FeedCollection
-import java.net.URI
-import java.text.SimpleDateFormat
 
 @Transactional
 class CrawlerService {

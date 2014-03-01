@@ -1,14 +1,9 @@
 package org.hmaissi.api
 
 //import com.sun.syndication.feed.synd.SyndContent
-import grails.converters.JSON
 import grails.transaction.Transactional
-import org.hmaissi.Feed
-
 import groovyx.net.http.ContentType
 import groovyx.net.http.HTTPBuilder
-import org.hmaissi.Post
-import org.hmaissi.RssPost
 
 import static groovyx.net.http.Method.GET
 

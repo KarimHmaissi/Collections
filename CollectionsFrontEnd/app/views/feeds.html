@@ -38,14 +38,33 @@
 
 <div class="row">
   <ul class="list-style-none">
-    <li ng-repeat="feed in feeds | filter: {feedType: feedFilter} | filter:search:strict" class="col-md-4 ">
-      <a href="#/feed/{{feed.id}}"><strong>{{feed.title}}</strong></a>
-      <ul class="feed-details-list">
-        <li><p>{{feed.upvotes}}</p></li>
-        <li><p>{{feed.feedType}}</p></li>
-        <li><a href="#/user/{{feed.submitterId}}">{{feed.submitter}}</a></li>
-        <li><a href="#" class="" id="{{feed.id}}" title="{{feed.title}}" type="{{feed.feedType}}" add="">Add</a></li>
-      </ul>
+    <!-- <li ng-repeat="feed in feeds | filter: {feedType: feedFilter} | filter:search:strict" class="col-md-4"> -->
+    <li ng-repeat="feed in feeds | filter: {feedType: feedFilter}" class="col-md-4">
+    <div class="feed">
+
+        <a href="#/feed/{{feed._id}}"><strong>{{feed._source.title}}</strong></a>
+        <ul class="feed-details-list">
+          <li><p>{{feed.upvotes}}</p></li>
+
+          <li ng-switch on="feed._source.feedType">
+            <img src="/images/youtube.png" alt="youtube" ng-switch-when="youtube">
+            <img src="/images/rss.png" alt="rss"  ng-switch-when="rss">
+            <img src="/images/twitter.png" alt="twitter"  ng-switch-when="twitter">
+            <img src="/images/reddit.png" alt="reddit"  ng-switch-when="reddit">
+          </li>
+    
+
+
+          <li><a href="#/user/{{feed._source.submitterId}}">{{feed._source.submitter}}</a></li>
+        </ul>
+        <ul class="feed-details-list">
+          <li><a href="#/feed/{{feed._id}}" class="" >View</a></li>
+          <li><a href="#" class="" id="{{feed._id}}" title="{{feed._source.title}}" type="{{feed._source.feedType}}" add="">Add</a></li>
+        </ul>
+
+      </div>
     </li>
+
+
   </ul>
 </div>

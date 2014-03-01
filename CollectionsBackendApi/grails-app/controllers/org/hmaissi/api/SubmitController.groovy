@@ -1,8 +1,6 @@
 package org.hmaissi.api
 
 import grails.converters.JSON
-import org.hmaissi.Feed
-import groovy.json.JsonSlurper
 
 class SubmitController {
     def crawlerService

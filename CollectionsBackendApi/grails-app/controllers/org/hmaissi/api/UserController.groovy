@@ -1,9 +1,6 @@
 package org.hmaissi.api
 
 import grails.converters.JSON
-import grails.validation.ValidationException
-import org.hmaissi.Feed
-import org.hmaissi.Post
 
 class UserController {
 

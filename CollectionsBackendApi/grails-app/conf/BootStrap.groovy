@@ -1,8 +1,12 @@
-import org.hmaissi.Feed
+import org.hmaissi.api.Feed
 
 class BootStrap {
 
+    def elasticSearchService
+
     def init = { servletContext ->
+
+//        elasticSearchService.index()
 //
 //        new Feed(feedUrl: "http://twitter.com/karimhmaissi", upvotes:259, score:1057, title:"Web developer Karim Hmaissi twitter").save(failOnError: true)
 //        new Feed(feedUrl: "http://feeds.feedburner.com/TechCrunch", upvotes:23, score:546, title:"TechCrunch news and updates on technology").save(failOnError: true)

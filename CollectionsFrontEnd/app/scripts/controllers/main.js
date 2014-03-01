@@ -105,10 +105,67 @@ mainModule.controller('TwitterCtrl', function ($scope, $routeParams, twitterServ
 	});
 });
 
-mainModule.controller('NewMashupCtrl', function ($scope, feedService) {
-	feedService.get().then(function(result) {
-		$scope.feeds = result;
+mainModule.controller('NewMashupCtrl', function ($scope, $timeout, feedService, feedSearchService) {
+	// feedService.get().then(function(result) {
+	// 	console.log(result)
+	// 	$scope.feeds = result;
+	// });
+
+	// feedSearchService.search({
+	// 	q: "*:*",
+	// 	size: 100
+	// }).then(function(result) {
+	// 	console.log(result);
+	// 	$scope.feeds = result.hits.hits
+	// }, function(error) {
+	// 	console.trace(error.message);
+	// });
+
+	// $scope.searchFeeds = function(q) {
+
+	// 	console.log("running search: " + q);
+	// 	feedSearchService.search({
+	// 		q: q + "*",
+	// 		size: 100
+	// 	}).then(function(result) {
+	// 		console.log(result);
+	// 		$scope.feeds = result.hits.hits
+	// 	}, function(error) {
+	// 		console.trace(error.message);
+	// 	});
+		
+	// };
+
+	// feedSearchService.search().then(function(result) {
+	// 	console.log(result);
+	// });
+
+	
+	//SEARCH
+	// $scope.searchFeeds = function(query) {
+	// 	console.log(query);
+	// 	feedSearchService.search(query).then(function(result) {
+	// 		console.log(result);
+	// 		$scope.feeds = result.hits.hits
+	// 	});
+	// };
+
+	// $scope.searchFeeds();
+
+	$scope.$watch("query", function(newQuery) {
+		// console.log("query changed");
+		//if query has not changed in the last second 
+		//(user stopped typing) then do a search
+		$timeout(function() {
+			if($scope.query === newQuery) {
+				feedSearchService.search(newQuery).then(function(result) {
+					console.log(result);
+					$scope.feeds = result.hits.hits
+				});
+			}
+		}, 300);
 	});
+
 
 	$scope.title = "Your new mashup";
 	$scope.mashupFeeds = [];
@@ -169,7 +226,11 @@ mainModule.controller('NewMashupCtrl', function ($scope, feedService) {
 			
 
 		});
-	}
+	};
+
+	
+
+
 
 	
 });

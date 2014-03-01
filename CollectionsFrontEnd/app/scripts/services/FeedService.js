@@ -35,7 +35,7 @@ mainModule.service("feedService", function($http, $q, $angularCacheFactory) {
 			} else {
 
 				$http.jsonp(
-					"http://192.168.0.3:8080/CollectionsBackendApi/feed?callback=JSON_CALLBACK")
+					"http://192.168.0.2:8080/CollectionsBackendApi/feed?callback=JSON_CALLBACK")
 
 				.success(function(result) {
 					dataCache.put("/feed", result);
@@ -60,7 +60,7 @@ mainModule.service("feedService", function($http, $q, $angularCacheFactory) {
 				defer.resolve(dataCache.get("/feed/" + id));
 			} else {
 
-				$http.jsonp("http://192.168.0.3:8080/CollectionsBackendApi/feed/get?id=" 
+				$http.jsonp("http://192.168.0.2:8080/CollectionsBackendApi/feed/get?id=" 
 					+ id + "&callback=JSON_CALLBACK")
 				.success(function(result) {
 					dataCache.put("/feed/" + id, result);
@@ -83,7 +83,7 @@ mainModule.service("feedService", function($http, $q, $angularCacheFactory) {
 				defer.resolve(dataCache.get("/collection/" + id));
 			} else {
 
-				$http.jsonp("http://192.168.0.3:8080/CollectionsBackendApi/feed/getCollection?id=" 
+				$http.jsonp("http://192.168.0.2:8080/CollectionsBackendApi/feed/getCollection?id=" 
 					+ id + "&callback=JSON_CALLBACK")
 				.success(function(result) {
 					console.log(result);
@@ -106,11 +106,11 @@ mainModule.service("feedService", function($http, $q, $angularCacheFactory) {
 
 			if(feedType && !(feedType === "all")) {
 				var cacheKey = "/getByUser/" + userId + "/" + feedType;
-				var url = "http://192.168.0.3:8080/CollectionsBackendApi/user/getFeedsByUser?id=" 
+				var url = "http://192.168.0.2:8080/CollectionsBackendApi/user/getFeedsByUser?id=" 
 				+ userId + "&feedType=" + feedType + "&callback=JSON_CALLBACK"
 			} else {
 				var cacheKey = "/getByUser/" + userId;
-				var url = "http://192.168.0.3:8080/CollectionsBackendApi/user/getFeedsByUser?id=" 
+				var url = "http://192.168.0.2:8080/CollectionsBackendApi/user/getFeedsByUser?id=" 
 				+ userId + "&callback=JSON_CALLBACK"
 			}
 
@@ -141,7 +141,7 @@ mainModule.service("feedService", function($http, $q, $angularCacheFactory) {
 			// } else {
 
 				$http.jsonp(
-					"http://192.168.0.3:8080/CollectionsBackendApi/feed/getPostsByIds/" + "",
+					"http://192.168.0.2:8080/CollectionsBackendApi/feed/getPostsByIds/" + "",
 					{params: {"ids": ids, "callback":"JSON_CALLBACK"}}
 				)
 				.success(function(result) {
@@ -160,7 +160,7 @@ mainModule.service("feedService", function($http, $q, $angularCacheFactory) {
 		submitFeed: function(title, url) {
 			var defer = $q.defer();
 
-			$http.jsonp("http://192.168.0.3:8080/CollectionsBackendApi/submit/",
+			$http.jsonp("http://192.168.0.2:8080/CollectionsBackendApi/submit/",
 				{params: {"feedUrl": url, "title": title, callback:"JSON_CALLBACK"}})
 			.success(function(result) {
 				console.log(result);
@@ -177,7 +177,7 @@ mainModule.service("feedService", function($http, $q, $angularCacheFactory) {
 		submitMashup: function(title, feeds) {
 			var defer = $q.defer();
 
-			$http.jsonp("http://192.168.0.3:8080/CollectionsBackendApi/submit/submitCollection/",
+			$http.jsonp("http://192.168.0.2:8080/CollectionsBackendApi/submit/submitCollection/",
 				{params: {title: title, feeds: feeds, callback:"JSON_CALLBACK"}})
 			.success(function(result) {
 				console.log(result);
@@ -222,8 +222,8 @@ mainModule.service("feedService", function($http, $q, $angularCacheFactory) {
 					// {id: 14492, title: "wtf", feedType: "reddit"}
 				],
 				collections: [
-					{id: 14543, title: "Reddit Defaults"},
-					{id: 14657, title: "AngularJS Community "}
+					// {id: 14543, title: "Reddit Defaults"},
+					// {id: 14657, title: "AngularJS Community "}
 				],
 				userName: "Karim Hmaissi",
 				hasTwitter: true,

@@ -1,6 +1,7 @@
 package org.hmaissi
 
 import grails.test.mixin.TestFor
+import org.hmaissi.api.Feed
 import spock.lang.Specification
 
 /**

@@ -66,6 +66,9 @@ grails.project.dependency.resolution = {
 //        compile 'org.codehaus.jackson:jackson-mapper-asl:2.23'
         compile 'org.codehaus.jackson:jackson-core-asl:1.8.3'
         compile 'org.codehaus.jackson:jackson-mapper-asl:1.8.3'
+
+        runtime 'org.elasticsearch:elasticsearch:1.0.1'
+        runtime 'org.elasticsearch:elasticsearch-lang-groovy:1.5.0'
     }
 
     plugins {
@@ -81,6 +84,12 @@ grails.project.dependency.resolution = {
         compile ":rabbitmq:1.0.0"
 
         compile ":quartz:1.0.1"
+
+//        compile ':elasticsearch-gorm:0.0.2.3'
+        compile (":elasticsearch-gorm:0.0.2.3") {
+            excludes   'elasticsearch','elasticsearch-lang-groovy'
+        }
+//        compile ':elasticsearch:0.90.3.0-SNAPSHOT'
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate:3.6.10.7" // or ":hibernate4:4.1.11.6"

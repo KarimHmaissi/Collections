@@ -1,16 +1,9 @@
 package org.hmaissi.api
 
 import grails.transaction.Transactional
-import org.hmaissi.Feed
-import org.hmaissi.TweetPost
-import twitter4j.Paging
-import twitter4j.Query
-import twitter4j.QueryResult
-import twitter4j.ResponseList
 import twitter4j.Status
 
 import twitter4j.Twitter
-import twitter4j.TwitterException
 
 @Transactional
 class TwitterService {

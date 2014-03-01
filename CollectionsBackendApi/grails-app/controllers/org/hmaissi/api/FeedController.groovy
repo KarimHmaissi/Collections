@@ -1,14 +1,8 @@
 package org.hmaissi.api
 
 import grails.converters.JSON
-import grails.validation.ValidationException
 import org.codehaus.jackson.map.ObjectMapper
 import org.hibernate.criterion.CriteriaSpecification
-import org.hmaissi.Feed
-import org.hmaissi.FeedCollection
-import org.hmaissi.Post
-import org.hmaissi.utility.CriteriaAggregator
-
 
 class FeedController {
 
@@ -37,11 +31,13 @@ class FeedController {
                 property("score", "score")
                 property("submitterId", "submitterId")
                 property("title", "title")
-            }
-        }
+            maxResults(50)
+            order("score", "desc")
+    }
+}
 
 //        println feeds
-        
+
         ObjectMapper mapper = new ObjectMapper()
         String jsonString = mapper.writeValueAsString(feeds)
 
@@ -98,7 +94,7 @@ class FeedController {
 
         if(params.ids != null) {
 
-            def posts = []
+            /*def posts = []
 
             for(def id : params.ids) {
                 println id
@@ -119,7 +115,15 @@ class FeedController {
             //get first 100 posts
             if(!(posts.size() < 100)) {
                 posts = posts[posts.size() - 101..posts.size() - 1]
+            }*/
+            def feeds = Feed.getAll(params.ids)
+
+            def posts = Post.withCriteria {
+                'in'("feed", feeds)
+                maxResults(100)
+                order("score", "desc")
             }
+
 
             def json = [
                 "posts": posts
@@ -134,10 +138,7 @@ class FeedController {
     }
 
     def getCollection() {
-        if(params.long("id") > 0) {
-            def collection = FeedCollection.get(params.long("id"))
 
-            if(collection) {
 //                println collection.feeds.id
 //                def feeds = Feed.getAll(collection.feeds.id)
 //                def posts = Post.findAllByFeed(collection.feeds.id)
@@ -169,8 +170,12 @@ class FeedController {
                         }
                     }
                 }*/
+        if(params.long("id") > 0) {
+            def collection = FeedCollection.get(params.long("id"))
 
-                def now = new Date()
+            if(collection) {
+
+                /*def now = new Date()
                 println now
                 def feeds = Feed.getAll(collection.feeds.id)
 
@@ -189,13 +194,30 @@ class FeedController {
                 //get first 100 posts
                 allPosts = allPosts[allPosts.size() - 101..allPosts.size() - 1]
                 def later = new Date()
-                println later
+                println later*/
 
+                def now = new Date()
+                println now
+                println now.time
+
+                def feeds = Feed.getAll(collection.feeds.id)
+
+                def posts = Post.withCriteria {
+                    'in'("feed", feeds)
+                    maxResults(100)
+                    order("score", "desc")
+                }
+
+                def later = new Date()
+                println later
+                println later.time
+
+                //use the jackson json lib for MOR SPEED!
 
                 def json = [
                         "feed": collection,
                         "feeds": feeds,
-                        "posts": allPosts
+                        "posts": posts
                 ]
                 render "${params.callback}(${json as JSON})"
             }

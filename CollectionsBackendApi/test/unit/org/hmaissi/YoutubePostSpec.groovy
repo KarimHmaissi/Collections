@@ -1,6 +1,7 @@
 package org.hmaissi
 
 import grails.test.mixin.TestFor
+import org.hmaissi.api.YoutubePost
 import spock.lang.Specification
 
 /**

@@ -129,6 +129,16 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/favicon.ico':                ['permitAll']
 ]
 
+elasticSearch.datastoreImpl = "hibernateDatastore"
+elasticSearch.client.mode = 'node'
+client.transport.sniff = true
+elasticSearch.client.hosts = [
+        [host:'192.168.0.2', port:9300]
+]
+
+
+
+
 
 
 rabbitmq {

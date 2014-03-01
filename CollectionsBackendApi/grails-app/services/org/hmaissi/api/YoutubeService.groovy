@@ -3,11 +3,6 @@ package org.hmaissi.api
 import grails.transaction.Transactional
 import groovyx.net.http.ContentType
 import groovyx.net.http.HTTPBuilder
-import org.hmaissi.Feed
-import org.hmaissi.RedditPost
-import org.hmaissi.YoutubePost
-
-import java.text.DateFormat
 
 import static groovyx.net.http.Method.GET
 

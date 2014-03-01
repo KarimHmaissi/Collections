@@ -1,8 +1,6 @@
 package org.hmaissi.api
 
 import grails.converters.JSON
-import org.hmaissi.Feed
-import org.hmaissi.Post
 
 class PostController {
 

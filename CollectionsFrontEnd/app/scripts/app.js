@@ -5,6 +5,7 @@ angular.module('collectionsFrontEndApp', [
   'ngSanitize',
   'ngRoute',
   'jmdobry.angular-cache'
+  // 'elasticsearch'
 ])
   .config(function ($routeProvider) {
     $routeProvider
