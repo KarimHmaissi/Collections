@@ -54,17 +54,27 @@
 						<li><a href="" ng-click="filterFeeds('Twitter')">Twitter</a></li>
 					</ul>
 				</div> -->
+			</div>	
+
+			<div class="margin-top text-center">
+				<a href="" ng-click="addAll()" class="btn btn-primary">Add All</a>
 			</div>
 
 			<div class="margin-top" ng-include src="'views/feeds.html'"></div>
 		</div>
 		<div ng-show="!showfeeds">
+
 			<div ng-include src="'views/posts.html'"></div>
 		</div>
 	</div>
 
 	<div class="col-md-3 transition-all">
 		<h4>Feeds in </h4> <h5>{{title}}</h5>
+
+		<div class="margin-top ">
+			<a href="" ng-click="removeAll()" class="btn btn-primary">Remove All</a>
+		</div>
+
 		<div ng-include class="margin-top-lg" src="'views/mashupFeedPreview.html'"></div>
 	</div>
 </div>

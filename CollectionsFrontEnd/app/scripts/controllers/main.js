@@ -228,6 +228,23 @@ mainModule.controller('NewMashupCtrl', function ($scope, $timeout, feedService, 
 		});
 	};
 
+
+	//experimental
+	$scope.addAll= function() {
+		for(var x = 0; x < $scope.feeds.length; x++) {
+			console.log($scope.feeds[x]._id);
+			var feed = $scope.feeds[x];
+			$scope.mashupFeeds.push({
+				id: feed._id, 
+				feedType: feed._source.feedType, 
+				title: feed._source.title});
+		}
+	};
+
+	$scope.removeAll = function() {
+		$scope.mashupFeeds.length = 0;
+	};
+
 	
 
 
