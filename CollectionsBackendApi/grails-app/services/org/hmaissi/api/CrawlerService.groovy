@@ -1,5 +1,6 @@
 package org.hmaissi.api
 
+import grails.converters.JSON
 import grails.transaction.Transactional
 
 @Transactional
@@ -10,6 +11,9 @@ class CrawlerService {
     def rssService
     def twitterService
     def youtubeService
+    def tumblrService
+
+
 
     /**
      * If feed does not match any other type it is assumed to be rss
@@ -70,11 +74,14 @@ class CrawlerService {
                 case "rss":
                     posts = rssService.crawl(feed)
                     break;
-                case "twitter":
-                    posts = twitterService.crawl(feed)
-                    break;
+//                case "twitter":
+//                    posts = twitterService.crawl(feed)
+//                    break;
                 case "youtube":
                     posts = youtubeService.crawl(feed)
+                    break;
+                case "tumblr":
+                    posts = tumblrService.crawl(feed)
                     break;
                 default:
                     println("did not recognise feed type: " + feed.feedType)
@@ -89,7 +96,7 @@ class CrawlerService {
         return null
     }
 
-    def crawlFeedCollection(title, feeds) {
+    def saveFeedCollection(title, feeds) {
 
         try {
             FeedCollection feedCollection = new FeedCollection()
@@ -97,6 +104,8 @@ class CrawlerService {
             Date date = new Date()
             feedCollection.score = feedCollection.upvotes + (date.getTime() / 1000 / 60)
             feedCollection.title = title
+
+            int thumbIndex = 1
 
             for(def feed : feeds) {
                 println feed
@@ -111,9 +120,33 @@ class CrawlerService {
 
                 //Thread.sleep(6000)
                 if(feedCheck != null) {
+
+                    def thumbnail = feedCheck.thumbnail1
+                    if(thumbnail != null && !thumbnail.equals("")) {
+                        if(thumbIndex == 1) {
+                            thumbIndex++
+                            feedCollection.thumbnail1 = thumbnail
+                        } else if(thumbIndex == 2) {
+                            thumbIndex++
+                            feedCollection.thumbnail2 = thumbnail
+                        } else if(thumbIndex == 3) {
+                            thumbIndex++
+                            feedCollection.thumbnail3 = thumbnail
+                        } else if(thumbIndex == 4) {
+                            thumbIndex++
+                            feedCollection.thumbnail4 = thumbnail
+                        } 
+
+    
+                    }
+
                     feedCollection.addToFeeds(feedCheck)
+
+
                 }
             }
+
+
             println "saving feed collection"
             return feedCollection.save(failOnError: true).id
 
@@ -124,13 +157,16 @@ class CrawlerService {
 
     }
 
-    def saveFeed(Feed feed, posts, update) {
+    def saveFeed(Feed feed, List<Post> posts, update) {
         try {
 
             //feed is already present, update with new posts
             if(update) {
 
-                def savedPosts = Post.findAllByFeed(feed, [sort:"posted", order:"desc", max:1])
+//                def savedPosts = Post.findAllByFeed(feed, [sort:"posted", order:"desc", max:1])
+                def savedPosts = Post.findAllByFeed(feed, [sort:"posted", order:"desc"])
+
+                def newPosts = 0
 
                 for(Post post: posts) {
 
@@ -138,6 +174,7 @@ class CrawlerService {
                     if(savedPosts.size() > 0) {
                         if(post.posted > savedPosts.get(0).posted) {
                             println "new post!"
+                            newPosts += 1
                             feed.addToPosts(post)
                         }
                     } else {
@@ -147,6 +184,13 @@ class CrawlerService {
                     }
                 }
                 println feed.title
+
+                feed.updates += 1
+                feed.percentNewPosts = (newPosts / posts.size()) * 100
+                feed.lastCrawled = new Date()
+
+                feed.lastPostTitle = posts.get(posts.size() - 1).title
+
                 return feed.save(failOnError: true)
 
             } else {
@@ -155,6 +199,48 @@ class CrawlerService {
                 feed.upvotes = 1
                 Date date = new Date()
                 feed.score = feed.upvotes + (date.getTime() / 1000 / 60) //millisecond to seconds to minutes
+
+                feed.updates = 1
+                feed.percentNewPosts = 100
+                feed.lastCrawled = new Date()
+                feed.clients = 0
+
+                int thumbIndex = 1
+
+                for(int x =0; x < posts.size(); x++) {
+                    if(posts.get(x).thumbnail != null && !posts.get(x).thumbnail.equals("")) {
+                        if(thumbIndex == 1) {
+                            feed.thumbnail1 = posts.get(x).thumbnail
+                            thumbIndex++
+                        } else if(thumbIndex == 2) {
+                            feed.thumbnail2 = posts.get(x).thumbnail
+                            thumbIndex++
+                        } else if (thumbIndex == 3) {
+                            feed.thumbnail3 = posts.get(x).thumbnail
+                            thumbIndex++
+                        } else if(thumbIndex == 4) {
+                            feed.thumbnail4 = posts.get(x).thumbnail
+                            break
+                        }
+                    }
+                }
+
+
+                //rewrite all of this TODO
+                if(feed.feedType == "reddit") {
+                    for(int x=0; x < posts.size(); x++) {
+                        def link = posts.get(x).link
+                        if(link.contains("http://imgur.com")) {
+                            
+                            link = link.replace("http://imgur.com", "http://i.imgur.com")
+                            println link
+                            feed.thumbnail1 = link
+                            break
+                        }
+                    }
+                }
+
+                feed.lastPostTitle = posts.get(posts.size() - 1).title
 
                 return feed.save(failOnError: true)
             }
@@ -166,14 +252,6 @@ class CrawlerService {
 
     }
 
-    def crawlAllPosts() {
-//        def feeds = Feed.list()
-//        for(def feed: feeds) {
-//            println "crawling feed: " + feed.feedUrl
-//            crawlFeed(feed.feedUrl, feed.feedType, feed.title)
-//            Thread.sleep(30000)
-//        }
-    }
 
 //    def savePosts(feed, posts) {
 //        for(Post post: posts) {

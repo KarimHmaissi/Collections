@@ -14,6 +14,7 @@ h1,h2,h3,h4,h5,h6, p, a {
 
 h1 {
   font-size: 62px;
+  font-weight: 900;
 }
 
 h2 {
@@ -22,7 +23,7 @@ h2 {
 
 h3 {
   font-size: 40px;
-  font-weight: 300;
+  font-weight: 700;
 }
 
 h4 {
@@ -34,7 +35,8 @@ h5 {
 }
 
 h6 {
-  font-size: 24px;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 p {
@@ -54,6 +56,10 @@ p {
 a:hover {
   color: #1abc9c;
 }
+
+
+
+
 
 
 
@@ -91,6 +97,63 @@ a:hover {
 
 
 
+/*Images*/
+.thumbnail-preview {
+  width: 50px;
+}
+
+.thumbnail-preview-sml {
+  width: 15px;
+}
+
+.image-grid {
+/*  margin-left: 14px;
+  margin-right: 14px;*/
+
+  /* Prevent vertical gaps */
+ line-height: 0;
+ 
+ -webkit-column-count: 4;
+ -webkit-column-gap:   0px;
+ -moz-column-count:    4;
+ -moz-column-gap:      0px;
+ column-count:         4;
+ column-gap:           0px;
+}
+
+/* .image-grid-2 {
+margin-left: 14px;
+  margin-right: 14px;
+
+
+ line-height: 0;
+ 
+ -webkit-column-count: 2;
+ -webkit-column-gap:   0px;
+ -moz-column-count:    2;
+ -moz-column-gap:      0px;
+ column-count:         2;
+ column-gap:           0px;
+}*/
+ 
+.image-grid li {
+  /*float: left;*/
+  padding: 7px;
+}
+
+.image-grid img {
+  display: block;
+  height: 65px;
+  width: 65px;
+}
+
+.image-grid li:nth-child(odd) {
+  clear: left;
+}
+
+
+
+
 
 
 .post {
@@ -124,6 +187,10 @@ a:hover {
   margin-top: 48px;
 }
 
+.margin-right {
+  margin-right: 14px;
+}
+
 .fixed {
   position: fixed;
 }
@@ -151,6 +218,20 @@ a:hover {
   -ms-transition: all 0.2s;
   transition: all 0.2s;
 
+}
+
+.word-break {
+  -ms-word-break: break-all;
+
+     /* Be VERY careful with this, breaks normal words wh_erever */
+     word-break: break-all;
+
+     /* Non standard for webkit */
+     word-break: break-word;
+
+    -webkit-hyphens: auto;
+       -moz-hyphens: auto;
+            hyphens: auto;
 }
 
 
@@ -185,22 +266,72 @@ a:hover {
 
 
 
+/*Search form */
+.search-form .btn {
+  font-size: 22px;
+  font-weight: 300;
+  width: 232px;
+  height: 50px;
+}
+
+.search-form input {
+  width: 50%;
+  text-decoration: none;
+  outline: none;
+  border: 2px solid #81888D;
+  /*color: #2c3e50;*/
+  /*font-family: 'Lato', "Helvetica Neue", sans-serif;*/
+  font-size: 18px;
+  padding: 8px 12px;
+  height: 50px;
+  -webkit-appearance: none;
+  border-radius: 6px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  vertical-align: bottom;
+
+  transition: all 0.3s ease;
+}
+
+.search-form input:focus {
+  border: 2px solid #1abc9c !important;
+}
+
+
 .feed {
-  border-left: 8px solid #ccc;
+  /*border-left: 8px solid #ccc;*/
   overflow: hidden;
-  padding: 8px;
+  padding: 14px;
   padding-left: 12px;
-  -webkit-box-shadow: 1px 1px 5px 0 #ccc;
-  -moz-box-shadow: 1px 1px 5px 0 #ccc;
-  box-shadow: 1px 1px 5px 0 #ccc;
+  -webkit-box-shadow: 1px 1px 5px 1px #ccc;
+  -moz-box-shadow: 1px 1px 5px 1px #ccc;
+  box-shadow: 1px 1px 5px 1px #ccc;
   -moz-border-radius-topright: 5px;
   border-top-right-radius: 5px;
   -moz-border-radius-bottomright: 8px;
   border-bottom-right-radius: 8px;
 
   margin: 8px;
+
+  margin-top: 0;
 }
 
+.feed .row {
+  padding: 14px;
+}
+
+.feed .favicon {
+  /*float: left;*/
+  margin-left: 14px;
+  margin-right: 14px;
+  width: 24px;
+}
+
+
+.feed-preview-img {
+  padding: 0 8px;
+  max-width: 100%;
+}
  
 /*.view-animate {
   padding:10px;
@@ -236,4 +367,157 @@ input {
   width: 100%;
   border-color: #34495e;
   border: 1px solid;
+}
+
+
+
+
+.flip-container img {
+   -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+
+.flip-container img:hover {
+  
+  -webkit-filter: grayscale(100%);
+}
+
+/*Card flip ui http://davidwalsh.name/css-flip*/
+/* entire container, keeps perspective */
+.flip-container{
+/*perspective*/
+-webkit-perspective:1000;
+   -moz-perspective:1000;
+    -ms-perspective:1000;
+     -o-perspective:1000;
+        perspective:1000;
+}
+/* flip the pane when hovered */
+  .flip-container:hover .flipper, .flip-container.hover .flipper{
+/*transform*/
+/*-webkit-transform:rotateY(180deg);
+   -moz-transform:rotateY(180deg);
+    -ms-transform:rotateY(180deg);
+     -o-transform:rotateY(180deg);
+        transform:rotateY(180deg);*/
+}
+.flip-container, .front, .back{
+/*width:320px;
+height:480px;*/
+/*width: 234px;
+height: 341px;*/
+/*
+  width:100%;
+height:100%;*/
+}
+/* flip speed goes here */
+.flipper{
+/*transition*/
+-webkit-transition:0.6s;
+   -moz-transition:0.6s;
+     -o-transition:0.6s;
+        transition:0.6s;
+/*transform-style*/
+-webkit-transform-style:preserve-3d;
+   -moz-transform-style:preserve-3d;
+    -ms-transform-style:preserve-3d;
+     -o-transform-style:preserve-3d;
+        transform-style:preserve-3d;
+position:relative;
+}
+/* hide back of pane during swap */
+.front, .back{
+/*backface-visibility*/
+-webkit-backface-visibility:hidden;
+   -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+     -o-backface-visibility:hidden;
+        backface-visibility:hidden;
+/*position:absolute;
+top:0;
+left:0;*/
+}
+/* front pane, placed above back */
+.front{
+z-index:2;
+}
+/* back, initially hidden pane */
+.back{
+/*transform*/
+-webkit-transform:rotateY(180deg);
+   -moz-transform:rotateY(180deg);
+    -ms-transform:rotateY(180deg);
+     -o-transform:rotateY(180deg);
+        transform:rotateY(180deg);
+position:absolute;
+top:0;
+left:0;
+padding: 8px;
+width: 95%;
+height: 95%;
+
+}
+
+.back img {
+  max-width: 49%;
+  float: left;
+}
+
+
+/*TILE STUFF*/
+.tile-width {
+  width: 16%;
+}
+
+.tile-width-reddit {
+  width: 48%;
+}
+
+.info p {
+  margin: 0;
+}
+
+.masonry-brick {
+  display: none;
+  margin: 0.5em;
+}
+
+.masonry-brick.loaded {
+  display: block;
+}
+
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .tile-width {
+    width: 98%;
+  }
+
+  .tile-width-reddit {
+    width: 98%;
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .tile-width {
+    width: 48%;
+  }
+}
+  
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  .tile-width {
+    width: 24%;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  .tile-width {
+    width: 16%;
+  }
 }

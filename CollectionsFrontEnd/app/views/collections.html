@@ -1,23 +1,41 @@
 <div class="row">
-	<div class="col-md-9 transition-all" id="left-slide">
+	<div class="col-md-12 transition-all" id="left-slide">
 		<div class="text-center">
-			<h3 class="margin-top-none">{{feed.title}}</h3>
-			<p><strong>This feed is composed of multiple feeds. <a href="" slide="" left="left-slide" right="right-slide">View Feeds</a></strong></p>
+			<h1 class="margin-top-none">{{feed.title}}</h1>
+			<h4 class="margin-top-sm">Posts from</h4> 
+			<!-- <div ng-repeat="mashupFeed in mashupFeeds">
+				<a href="#/mashupFeed/{{mashupFeed.id}}">{{post.title}}</a>
+			</div> -->
+    		<a ng-repeat="feed in mashupFeeds" href="#/feed/{{feed.id}}" >
+    			<span ng-switch on="feed.feedType">
+					<img ng-switch-when="reddit" src="/images/reddit.png" alt="" class="thumbnail-preview-sml">
+					<img ng-switch-when="youtube" src="/images/youtube.png" alt="" class="thumbnail-preview-sml">
+					<img ng-switch-when="rss" src="/images/rss.png" alt="" class="thumbnail-preview-sml">
+				</span>
+    			{{feed.title}}, </a>
 
-			<ul class="feed-details-list">
+			<ul class="feed-details-list margin-top">
 				<li><p>{{feed.upvotes}}</p></li>
 				<li><a href="#/user/{{feed.submitterId}}">{{feed.submitter}}</a></li>
-				<li><a href="#" class="btn btn-primary" id="{{feed.id}}" data-follow="">Follow Feed</a></li>
+				<li><a href="" class="btn btn-primary" id="{{feed.id}}" feed="false" follow="">Follow Feed</a></li>
 			</ul>
 		</div>
+
+		<ul class="list-style-none feed-details-list text-center margin-top">
+		  <li><a href="" ng-click="getFeedByType('all')">All</a></li>
+		  <li><a href="" ng-click="getFeedByType('rss')">RSS</a></li>
+		  <li><a href="" ng-click="getFeedByType('reddit')">Reddit</a></li>
+		  <li><a href="" ng-click="getFeedByType('youtube')">Youtube</a></li>
+		  <li><a href="" ng-click="getFeedByType('twitter')">Twitter</a></li>
+		</ul>
 
 		<div ng-include src="'views/posts.html'"></div>
 	</div>
 
-	<div class="col-md-3 transition-all">
+<!-- 	<div class="col-md-3 transition-all">
 		<h4>Feeds in </h4> <h5>{{feed.title}}</h5>
 		<div ng-include class="margin-top-lg" src="'views/mashupFeedPreview.html'"></div>
-	</div>
+	</div> -->
 </div>
 
 

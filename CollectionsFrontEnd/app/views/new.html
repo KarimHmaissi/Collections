@@ -6,6 +6,11 @@
 			<label for="mashup-title" class="margin-top-sm pointer" ng-click="editTitle = !editTitle">Edit Mashup title</label>
 			<input type="text" ng-model="title" id="mashup-title" class="text-center" ng-show="editTitle">
 
+<!-- 			<div ng-show="showSave">
+				<label for="mashup-title" class="margin-top-sm pointer">Mashup title</label>
+				<input type="text" ng-model="title" id="mashup-title" class="text-center"> 
+			</div> -->
+
 			<p class="margin-top"><strong>Add feeds to your new mashup. Click preview to check out your mashup!</strong></p>
 
 			<ul class="feed-details-list">
@@ -60,7 +65,7 @@
 				<a href="" ng-click="addAll()" class="btn btn-primary">Add All</a>
 			</div>
 
-			<div class="margin-top" ng-include src="'views/feeds.html'"></div>
+			<div class="margin-top" ng-include src="'views/feedsForNew.html'"></div>
 		</div>
 		<div ng-show="!showfeeds">
 

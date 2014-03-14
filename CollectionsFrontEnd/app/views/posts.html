@@ -1,25 +1,8 @@
-<ol>
-	<!-- <li ng-repeat="post in posts | orderBy:'timestamp':true" ng-switch on="post.postType"> -->
-	<li ng-repeat="post in posts | orderBy:'score':true" ng-switch on="post.postType" class="animate-repeat post">
-		<div ng-switch-when="collection" class="post">
-			<div ng-include src="'views/collection.html'"></div>
-		</div>
-		<div ng-switch-when="youtube" class="post">
-			<div ng-include src="'views/youtube.html'"></div>
-		</div>
-		<div ng-switch-when="rss" class="post">
-			<div ng-include src="'views/rss.html'"></div>
-		</div>
-		<div ng-switch-when="twitter" class="post">
-			<div ng-include src="'views/twitter.html'"></div>
-		</div>
-		<div ng-switch-when="reddit" class="post">
-			<div ng-include src="'views/reddit.html'"></div>
-		</div>
-		<span ng-switch-default>Error</span>
-		<!-- <p>{{post.feed}}</p> -->
-		<!-- <div>{{Math.floor((post.posted | timestamp) / 1000 / 60 / 60)}}</div> -->
-		<!-- <div>{{post.posted | timestamp}}</div> -->
-		<!-- <div>{{post.score}}</div> -->
-	</li>
-</ol>
+<div ng-switch on="user.viewType">
+	<div ng-switch-when="list" >
+		<div ng-include src="'views/postsView/postsList.html'"></div>
+	</div>
+	<div ng-switch-when="tile" >
+		<div ng-include src="'views/postsView/postsTile.html'"></div>
+	</div>
+</div>

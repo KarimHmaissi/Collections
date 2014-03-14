@@ -22,7 +22,7 @@ mainModule.service("twitterService", function($http, $q, $angularCacheFactory) {
 				console.log("loaded from cache");
 				defer.resolve(dataCache.get("/user/getTweets/" + userName));
 			} else {
-				$http.jsonp("http://192.168.0.2:8080/CollectionsBackendApi/user/getTweets?userName=" 
+				$http.jsonp("http://localhost:8080/CollectionsBackendApi/user/getTweets?userName=" 
 					+ userName + "&callback=JSON_CALLBACK")
 				.success(function(result) {
 					dataCache.put("/user/getTweets/" + userName, result);

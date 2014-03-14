@@ -52,7 +52,7 @@ class SubmitController {
             def feeds = [params.feeds].flatten().findAll{ it != null }
             println feeds
 
-            def id = crawlerService.crawlFeedCollection(params.title, feeds)
+            def id = crawlerService.saveFeedCollection(params.title, feeds)
 
             def message = [message:"successfully added feed", id: id]
             //render message as JSON
@@ -62,6 +62,32 @@ class SubmitController {
             def error = [error:"error adding feed"]
             println "error: " + e.message
             render error as JSON
+        }
+    }
+
+
+    def submitTagForFeed() {
+        println "submitting tag"
+        if(params.feedUrl && params.tag) {
+
+            try {
+                def feed = Feed.findAllByFeedUrl(params.feedUrl).get(0)
+                println "found feed"
+                Tag tag = new Tag()
+                tag.tag = params.tag
+                feed.addToTags(tag)
+                feed.save(failOnError: true)
+
+                def message = [message:"successfully added tag"]
+                //render message as JSON
+                render "${params.callback}(${message as JSON})"
+
+            } catch(Exception e) {
+                def error = [error:"error adding tag"]
+                println "error: " + e.message
+                render error as JSON
+            }
+
         }
     }
 

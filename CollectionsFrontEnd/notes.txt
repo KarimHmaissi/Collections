@@ -13,6 +13,22 @@ https://twitter.com/KarimHmaissi
 2013-12-23T16:00:02.000Z
 
 
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://feeds.feedburner.com/oatmealfeed&title=The Oatmeal - Comics, Quizzes, and Stories
+
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://nedroid.com/feed/&title=Nedroid Picture Diary
+
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://moonbeard.com/feed/atom/&title=Moonbeard
+
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://xkcd.com/rss.xml&title=xkcd.com
+
+
+
+
+
+http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://feeds.bbci.co.uk/news/uk/rss.xml&title=BBC Top Stories
+
+
+
 <iframe width="560" height="315" src="//www.youtube.com/embed/{{post.videoId}}" frameborder="0" allowfullscreen></iframe>
 
 

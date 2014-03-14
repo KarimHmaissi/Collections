@@ -1,13 +1,14 @@
 
 <div class="text-center">
-	<h3 class="margin-top-none">{{feed.title}}</h3>
+	<h1 class="margin-top-none">{{feed.title}}</h1>
 	<p><strong>{{feed.feedUrl}}</strong></p>
 
 	<ul class="feed-details-list">
 		<li><p>{{feed.upvotes}}</p></li>
 		<li><p>{{feed.feedType}}</p></li>
 		<li><a href="#/user/{{feed.submitterId}}">{{feed.submitter}}</a></li>
-		<li><a href="#" class="btn btn-primary btn-sm" id="{{feed.id}}" follow="">Follow Feed</a></li>
+		<li><a href="" class="btn btn-primary btn-sm" id="{{feed.id}}" feed="true" follow="">Follow Feed</a></li>
+		<!-- <li><a href="" class="btn btn-primary btn-sm" id="{{feed.id}}" ng-click="followFeed(feed.id, feed.title, feed.feedType)" follow="">Follow Feed</a></li> -->
 	</ul>
 </div>
 <!-- <ul class="list-style-none feed-details-list text-center">

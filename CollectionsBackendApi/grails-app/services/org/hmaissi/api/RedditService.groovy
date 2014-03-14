@@ -1,5 +1,6 @@
 package org.hmaissi.api
 
+import grails.converters.JSON
 import grails.transaction.Transactional
 import groovyx.net.http.ContentType
 import groovyx.net.http.HTTPBuilder
@@ -8,6 +9,8 @@ import static groovyx.net.http.Method.GET
 
 @Transactional
 class RedditService {
+
+    static rabbitSubscribe = 'crawler.reddit'
 
     def crawlerService
 
@@ -72,6 +75,8 @@ class RedditService {
                     post.title = redditPost.data.title
                     post.isSelf = redditPost.data.is_self
 
+                    post.description = ""
+
                     if(redditPost.data.selftext_html == "" || redditPost.data.selftext_html == null) {
                         post.selfTextMarkup = "none"
                     } else {
@@ -96,6 +101,35 @@ class RedditService {
             return posts
 
         }
+    }
+
+
+    //called by quartz job
+    //send rabbitmq messages
+    def crawlAllRedditPosts() {
+        //send rabbitmq message for each post
+        println "sending messages"
+        def c = Feed.createCriteria()
+        def feeds = c.list {
+            eq("feedType", "reddit")
+            order("percentNewPosts", "desc")
+        }
+
+        for(def feed: feeds) {
+            print "sending message: " + feed.title
+            def message = [feedUrl: feed.feedUrl, feedType: feed.feedType, feedTitle: feed.title] as JSON
+            rabbitSend "crawler.reddit", "crawler.reddit.high", message.toString()
+        }
+
+    }
+
+    //handle rabbitmq messaging
+    void handleMessage(message) {
+        println "recieved message: " + message
+        def json = JSON.parse(message)
+        crawlerService.crawlFeed(json.feedUrl, json.feedType, json.title)
+
+        Thread.sleep(2200)
     }
 }
 

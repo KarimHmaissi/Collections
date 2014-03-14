@@ -6,18 +6,107 @@
   </ul>
   <h3 class="text-muted">CollectionsFrontEnd</h3>
 </div> -->
-<div class="spinner" ng-show="loading"></div>
+<!-- <div class="spinner" ng-show="loading"></div> -->
 
-<h3 class="margin-top-none">Find some feeds to follow</h3>
-<p><strong>Feed upvoted by the community. Think reddit meets feeds.</strong></p>
+<!-- <h3 class="margin-top-none">Mashups</h3>
+<p><strong>Feed mashups submitted and voted on by the community.</strong></p>
+ -->
+<div class="text-center">
+  <h1 class="margin-top-none">MASHUPS SEARCH</h1>
+  <h4 class="margin-top-sm">Discover new feed mashups to follow</h4>
+</div>
+
+<!-- <div class="margin-top">
+  <label for="search-feeds"  class="pointer">Search</label>
+  <input type="text" id="search-feeds" ng-model="query"  class="text-center">
+</div> -->
+
+<div class="margin-top text-center search-form">
+  <input type="text" id="search-feeds" ng-model="query"  class="text-center">
+  <a href="" class="btn btn-primary">Search</a>
+</div>
+
+<div class="row margin-top">
+  <ul class="list-style-none">
+    <!-- <li ng-repeat="feed in feeds | filter: {feedType: feedFilter} | filter:search:strict" class="col-md-4"> -->
+
+<!--     <li ng-repeat="feed in feeds | filter: {feedType: feedFilter}" class="col-md-12">
+    <div class="feed">
+
+        <div class="text-center">
+
+          <div class="row"> -->
+
+            <!-- <div class="col-md-2">
+              <p style="font-size:2.3em; text-weight:300; margin-top:28px">{{feed._source.upvotes}}</p>
+            </div>
+            <div class="col-md-10">
+              <a href="#/collection/{{feed._id}}"><h3 class="margin-top-none">{{feed._source.title}}</h3></a>
+
+              <ul class="feed-details-list">
+                
+                
+                <li><a href="#/user/{{feed._source.submitterId}}">{{feed._source.submitterId}}</a></li>
+                <li><a href="" class="btn btn-primary" id="{{feed._id}}" style="margin-top:48px; margin-right:28px" follow="">Follow</a></li>
+              </ul>
+            </div> -->
+            <ul class="list-style-none" masonry="" load-images="true">
+
+              <li ng-repeat="feed in feeds | filter: {feedType: feedFilter}" class="masonry-brick tile-width">
+                <img src="{{feed._source.thumbnail1}}" class="feed-preview-img" alt="feed">
+                <div class="feed " >
+
+                   
+<!--                     <div ng-switch on="feed._source.feedType" class="pull-right">
+                      <img src="/images/youtube.png" alt="youtube" class="favicon"  ng-switch-when="youtube">
+                      <img src="/images/rss.png" alt="rss" class="favicon"  ng-switch-when="rss">
+                      <img src="/images/twitter.png" alt="twitter" class="favicon"  ng-switch-when="twitter">
+                      <img src="/images/reddit.png" alt="reddit" class="favicon"  ng-switch-when="reddit">
+                    </div> -->
+                  
+
+                  
+                  <div class="text-left">
+
+                    
+                    <a href="#/collection/{{feed._id}}"><h6 class="margin-top-none">{{feed._source.title}}</h6></a>
+                    <!-- <p class="word-break"><strong>{{feed._source.feedUrl}}</strong></p> -->
+
+                    
+                    
+                    
+                    <p class="margin-top-sm"><strong>Last post: </strong>{{feed._source.lastPostTitle}}</p>
+                   
+                  </div> 
+
+                  <a href="" class="btn btn-primary margin-right pull-right" id="{{feed._id}}" follow="">Follow</a>
+          <!--         <a href="#/feed/{{feed._id}}" class="btn btn-primary margin-right pull-right" id="{{feed._id}}" follow="">View</a> -->
+
+
+                </div>
+              </li>
+
+            </ul>
+<!--           </div>
+          
+          
+        </div>
+
+      </div>
+    </li> -->
+
+
+  </ul>
+</div>
+
+
+<!-- <div ng-include src="'views/feeds.html'"></div> -->
 
 <!-- <ul class="list-style-none feed-details-list text-center">
   <li><a href="" ng-click="sortFeed('Hot')">Hot</a></li>
   <li><a href="" ng-click="sortFeed('Top')">Top</a></li>
   <li><a href="" ng-click="sortFeed('New')">New</a></li>
 </ul> -->
-
-<div ng-include src="'views/feeds.html'"></div>
 
 <!-- <div class="footer">
   <p>♥ from the Yeoman team</p>

@@ -1,7 +1,13 @@
 <a href="{{post.link}}"><strong>{{post.title}}</strong></a>
 <ul class="feed-details-list margin-top-sm">
-	<li><img src="/images/rss.png" alt="Rss Post"></li>
+	<li>
+		<img class="thumbnail-preview" src="{{post.thumbnail}}" alt="Rss Post">
+		<a embed="" href="#">Show</a>
+	</li>
 	<li><a href="{{post.redditCommentUrl}}">{{post.numberOfComments}} comments</a></li>
+	<li>
+		<p>{{post.description}}</p>
+	</li>
 <!-- 	<li><p>{{post.author}}</p></li>
 	<li><p>{{post.posted |timestamp}}</p></li> -->
 	<li>

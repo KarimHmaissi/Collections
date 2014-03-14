@@ -2,6 +2,7 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/MasterFeed.groovy" />
+    <bookmark url="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/RssService.groovy" line="102" mnemonic="2" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63e0085d-c4fa-4eb2-a5b7-49e93bd4cde0" name="Default" comment="" />
@@ -60,37 +61,7 @@
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/grails-app/controllers/org/hmaissi/api/SubmitController.groovy" line="62" class="org.hmaissi.api.SubmitController" package="org.hmaissi.api">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/CrawlerService.groovy" line="108" class="org.hmaissi.api.CrawlerService" package="org.hmaissi.api">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/CrawlerService.groovy" line="149" class="org.hmaissi.api.CrawlerService" package="org.hmaissi.api">
+      <breakpoint url="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/CrawlerService.groovy" line="115" class="org.hmaissi.api.CrawlerService" package="org.hmaissi.api">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -116,22 +87,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FeedController.groovy" pinned="true" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/org/hmaissi/api/FeedController.groovy">
+      <file leaf-file-name="Post.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/Post.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="1112" selection-end="1346" vertical-scroll-proportion="0.0" vertical-offset="680" max-vertical-offset="3961">
+            <state line="15" column="96" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="935">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchController.groovy" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/org/hmaissi/api/SearchController.groovy">
+      <file leaf-file-name="RssService.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/RssService.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="39" selection-start="2060" selection-end="2060" vertical-scroll-proportion="0.5018496" vertical-offset="664" max-vertical-offset="1496">
-              <folding>
-                <element signature="e#25#54#0" expanded="true" />
-              </folding>
+            <state line="94" column="88" selection-start="2883" selection-end="2883" vertical-scroll-proportion="0.0" vertical-offset="1598" max-vertical-offset="3043">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebCrawlerService.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/WebCrawlerService.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="36" selection-start="1262" selection-end="1262" vertical-scroll-proportion="0.0" vertical-offset="369" max-vertical-offset="1224">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -139,43 +117,16 @@
       <file leaf-file-name="Feed.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/Feed.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="23" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="595">
+            <state line="26" column="77" selection-start="525" selection-end="525" vertical-scroll-proportion="-10.478261" vertical-offset="201" max-vertical-offset="1054">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ElasticSearchService.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/work/plugins/elasticsearch-gorm-0.0.2.3/grails-app/services/org/grails/plugins/elasticsearch/ElasticSearchService.groovy">
+      <file leaf-file-name="CrawlerService.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/CrawlerService.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="347" column="19" selection-start="12000" selection-end="12000" vertical-scroll-proportion="0.0" vertical-offset="5899" max-vertical-offset="8500">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BuildConfig.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="36" selection-start="3455" selection-end="3455" vertical-scroll-proportion="0.0" vertical-offset="1292" max-vertical-offset="1938">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Config.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="27" selection-start="5714" selection-end="5714" vertical-scroll-proportion="0.0" vertical-offset="2380" max-vertical-offset="2822">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dependencies.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/work/plugins/elasticsearch-gorm-0.0.2.3/dependencies.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="43" selection-start="1046" selection-end="1046" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1156">
+            <state line="124" column="12" selection-start="3424" selection-end="3424" vertical-scroll-proportion="0.69590646" vertical-offset="1496" max-vertical-offset="4573">
               <folding />
             </state>
           </provider>
@@ -205,12 +156,6 @@
         <option value="$PROJECT_DIR$/grails-app/controllers/org/hmaissi/api/PostController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/org/hmaissi/api/TwitterService.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/org/hmaissi/api/SubmitController.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/jobs/collectionsbackendapi/CrawlFeedsJob.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/services/org/hmaissi/api/YoutubeService.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/services/org/hmaissi/api/RssService.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/services/org/hmaissi/api/RedditService.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/services/org/hmaissi/api/CrawlerService.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/org/hmaissi/Post.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/org/hmaissi/RedditPost.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/org/hmaissi/FeedCollection.groovy" />
@@ -224,14 +169,34 @@
         <option value="$PROJECT_DIR$/grails-app/controllers/org/hmaissi/api/FeedController.groovy" />
         <option value="$PROJECT_DIR$/target/work/plugins/elasticsearch-gorm-0.0.2.3/dependencies.groovy" />
         <option value="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/services/org/hmaissi/api/messageListeners/RedditListener.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/jobs/collectionsbackendapi/CrawlFeedsJob.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/Tag.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/org/hmaissi/api/SearchController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/jobs/collectionsbackendapi/CrawlRedditJob.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/jobs/collectionsbackendapi/CrawlRssJob.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/org/hmaissi/api/SubmitController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/services/org/hmaissi/api/YoutubeService.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/services/org/hmaissi/api/RssService.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/services/org/hmaissi/api/RedditService.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/services/org/hmaissi/api/TumblrService.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/jobs/collectionsbackendapi/CrawlTumblrJob.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/FeedCollection.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/TumblrPost.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/RedditPost.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/RssPost.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/YoutubePost.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/Feed.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/Post.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/services/org/hmaissi/api/WebCrawlerService.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/services/org/hmaissi/api/CrawlerService.groovy" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="537" />
-    <option name="width" value="1143" />
+    <option name="x" value="307" />
+    <option name="width" value="1388" />
     <option name="height" value="1010" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -274,7 +239,7 @@
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
     <property name="FullScreen" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jackson-core-2.2.3.jar!/" />
+    <property name="last_opened_file_path" value="F:/PROJECTS BACKUP/BacklinkAnalyser/BacklinkAnalyserBackend" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -609,16 +574,25 @@
       <workItem from="1393593657156" duration="174000" />
       <workItem from="1393594223922" duration="1848000" />
       <workItem from="1393596292885" duration="5321000" />
-      <workItem from="1393850690831" duration="49000" />
+      <workItem from="1393850690831" duration="6512000" />
+      <workItem from="1393857991614" duration="54000" />
+      <workItem from="1393927143991" duration="8068000" />
+      <workItem from="1393950560868" duration="3173000" />
+      <workItem from="1394010929107" duration="15000" />
+      <workItem from="1394011018698" duration="6725000" />
+      <workItem from="1394099035412" duration="26000" />
+      <workItem from="1394359455635" duration="2534000" />
+      <workItem from="1394439413355" duration="3994000" />
+      <workItem from="1394461766778" duration="150000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173628000" />
+    <option name="totallyTimeSpent" value="204830000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="537" y="0" width="1143" height="1010" extended-state="0" />
-    <editor active="false" />
+    <frame x="307" y="0" width="1388" height="1010" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -635,19 +609,19 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3686007" sideWeight="0.50033444" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Grails View" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19723502" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2075188" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24981523" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3849105" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31740615" sideWeight="0.49966556" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33072627" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.383592" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34506243" sideWeight="0.49966556" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291714" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -658,14 +632,14 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32849163" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -685,8 +659,8 @@
       <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26312578" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -711,51 +685,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/Feed.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="23" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="595">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/work/plugins/elasticsearch-gorm-0.0.2.3/grails-app/services/org/grails/plugins/elasticsearch/ElasticSearchService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="347" column="19" selection-start="12000" selection-end="12000" vertical-scroll-proportion="0.0" vertical-offset="5899" max-vertical-offset="8500">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="36" selection-start="3455" selection-end="3455" vertical-scroll-proportion="0.0" vertical-offset="1292" max-vertical-offset="1938">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="27" selection-start="5714" selection-end="5714" vertical-scroll-proportion="0.0" vertical-offset="2380" max-vertical-offset="2822">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/work/plugins/elasticsearch-gorm-0.0.2.3/dependencies.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="43" selection-start="1046" selection-end="1046" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1156">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/YoutubeService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="92" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="289" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/EmbedlyService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="289" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/org/hmaissi/api/PostController.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204" />
@@ -781,37 +710,14 @@
         <state line="0" column="6" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/UserFeed.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="17" selection-start="38" selection-end="38" vertical-scroll-proportion="0.08869565" vertical-offset="0" max-vertical-offset="575" />
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_09/src.zip!/java/net/URLClassLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="365" column="0" selection-start="13550" selection-end="13550" vertical-scroll-proportion="0.8049536" vertical-offset="5112" max-vertical-offset="12359" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/MasterFeed.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="39" selection-start="96" selection-end="96" vertical-scroll-proportion="-2.125" vertical-offset="0" max-vertical-offset="340" />
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/EmbedlyService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="6" selection-start="87" selection-end="87" vertical-scroll-proportion="0.14938489" vertical-offset="0" max-vertical-offset="569" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/TwitterService.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="16" selection-start="1671" selection-end="1717" vertical-scroll-proportion="0.0" vertical-offset="616" max-vertical-offset="1411">
-          <folding />
-        </state>
+        <state line="57" column="16" selection-start="1671" selection-end="1717" vertical-scroll-proportion="0.0" vertical-offset="616" max-vertical-offset="1411" />
       </provider>
     </entry>
     <entry file="jar://C:/grails-2.3.5/lib/org.springframework/spring-tx/jars/spring-tx-3.2.6.RELEASE-sources.jar!/org/springframework/transaction/support/TransactionTemplate.java">
@@ -822,34 +728,6 @@
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_09/src.zip!/java/util/concurrent/ThreadPoolExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="602" column="0" selection-start="24258" selection-end="24258" vertical-scroll-proportion="0.0" vertical-offset="9461" max-vertical-offset="34459" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/jobs/collectionsbackendapi/CrawlFeedsJob.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="43" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/RssService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="81" selection-start="2971" selection-end="2971" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2006">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/YoutubeService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="38" selection-start="3739" selection-end="3739" vertical-scroll-proportion="0.0" vertical-offset="1629" max-vertical-offset="2193">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/RedditService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="92" selection-start="1685" selection-end="1685" vertical-scroll-proportion="0.0" vertical-offset="704" max-vertical-offset="1904">
-          <folding>
-            <element signature="e#25#64#0" expanded="false" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="jar://C:/grails-2.3.5/dist/grails-plugin-converters-2.3.5-sources.jar!/grails/converters/JSON.java">
@@ -872,80 +750,19 @@
         <state line="104" column="0" selection-start="3765" selection-end="3765" vertical-scroll-proportion="0.18181819" vertical-offset="1364" max-vertical-offset="2414" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/FeedCollection.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="46" selection-start="233" selection-end="233" vertical-scroll-proportion="-4.6041665" vertical-offset="0" max-vertical-offset="459" />
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/YoutubePost.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="52" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527" />
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/TweetPost.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="42" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="425" />
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/RssPost.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="53" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="357" />
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/RedditPost.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="151" selection-start="543" selection-end="543" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="714" />
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/CrawlerService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="166" selection-start="4767" selection-end="4767" vertical-scroll-proportion="0.0" vertical-offset="2788" max-vertical-offset="4012">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/grails-2.3.5/dist/grails-plugin-controllers-2.3.5-sources.jar!/org/codehaus/groovy/grails/plugins/web/api/ControllersApi.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="292" column="18" selection-start="10593" selection-end="10649" vertical-scroll-proportion="0.33333334" vertical-offset="3685" max-vertical-offset="7429" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/utility/CriteriaAggregator.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="62" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/BootStrap.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="2" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-          <folding />
-        </state>
+        <state line="9" column="2" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/org/hmaissi/api/PostController.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="36" selection-start="143" selection-end="143" vertical-scroll-proportion="0.050847456" vertical-offset="75" max-vertical-offset="629" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/org/hmaissi/api/SubmitController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="0" selection-start="1626" selection-end="1626" vertical-scroll-proportion="1.6327684" vertical-offset="0" max-vertical-offset="1343">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/0.90.5/elasticsearch-0.90.5.jar!/org/elasticsearch/action/search/SearchRequest.class">
@@ -956,14 +773,6 @@
     <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="129" selection-start="373" selection-end="373" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/Post.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="15" selection-start="38" selection-end="38" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="714" />
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/org/hmaissi/api/UserController.groovy">
@@ -978,23 +787,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/target/work/plugins/elasticsearch-gorm-0.0.2.3/dependencies.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="43" selection-start="1046" selection-end="1046" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="1156">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="36" selection-start="3455" selection-end="3455" vertical-scroll-proportion="0.0" vertical-offset="1383" max-vertical-offset="1938">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="27" selection-start="5714" selection-end="5714" vertical-scroll-proportion="0.0" vertical-offset="2016" max-vertical-offset="2822">
-          <folding />
-        </state>
+        <state line="26" column="43" selection-start="1046" selection-end="1046" vertical-scroll-proportion="0.15201901" vertical-offset="314" max-vertical-offset="1156" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/1.0.1/elasticsearch-1.0.1.jar!/org/elasticsearch/action/search/SearchRequest.class">
@@ -1004,14 +797,116 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/target/work/plugins/elasticsearch-gorm-0.0.2.3/grails-app/services/org/grails/plugins/elasticsearch/ElasticSearchService.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="347" column="19" selection-start="12000" selection-end="12000" vertical-scroll-proportion="0.0" vertical-offset="4765" max-vertical-offset="7990">
+        <state line="347" column="19" selection-start="12000" selection-end="12000" vertical-scroll-proportion="0.0" vertical-offset="4765" max-vertical-offset="7990" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="39" selection-start="3709" selection-end="3709" vertical-scroll-proportion="0.0" vertical-offset="1083" max-vertical-offset="1938" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/org/hmaissi/api/FeedController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="48" selection-start="1650" selection-end="1650" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="4114" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/MasterFeed.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="44" selection-end="44" vertical-scroll-proportion="-1.0625" vertical-offset="0" max-vertical-offset="340" />
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/Tag.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="39" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="289" />
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/org/hmaissi/api/SearchController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="50" selection-start="1622" selection-end="1622" vertical-scroll-proportion="-11.956522" vertical-offset="507" max-vertical-offset="1411" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/work/plugins/elasticsearch-gorm-0.0.2.3/src/groovy/org/grails/plugins/elasticsearch/conversion/marshall/CollectionMarshaller.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="156" selection-end="156" vertical-scroll-proportion="0.123636365" vertical-offset="0" max-vertical-offset="550" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/EmbedlyService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="6" selection-start="87" selection-end="87" vertical-scroll-proportion="0.15454546" vertical-offset="0" max-vertical-offset="550" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/jobs/collectionsbackendapi/CrawlRedditJob.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="144" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/org/hmaissi/api/SubmitController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="49" selection-start="1620" selection-end="1620" vertical-scroll-proportion="0.0" vertical-offset="751" max-vertical-offset="1785" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/jsoup-1.7.3.jar!/org/jsoup/Jsoup.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="152" selection-end="152" vertical-scroll-proportion="0.1070529" vertical-offset="0" max-vertical-offset="794" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/YoutubeService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="116" selection-start="2293" selection-end="2293" vertical-scroll-proportion="0.0" vertical-offset="881" max-vertical-offset="2193">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/Feed.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/RedditService.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="23" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="595">
+        <state line="77" column="49" selection-start="2541" selection-end="2541" vertical-scroll-proportion="0.0" vertical-offset="830" max-vertical-offset="2329">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/jobs/collectionsbackendapi/CrawlRssJob.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="168" selection-end="418" vertical-scroll-proportion="0.21871345" vertical-offset="0" max-vertical-offset="855">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/jobs/collectionsbackendapi/CrawlTumblrJob.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="42" selection-start="95" selection-end="95" vertical-scroll-proportion="0.12230216" vertical-offset="0" max-vertical-offset="834" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="75" selection-start="5831" selection-end="5831" vertical-scroll-proportion="0.35809988" vertical-offset="2120" max-vertical-offset="3009" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/TumblrService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="52" selection-start="2566" selection-end="2566" vertical-scroll-proportion="0.14502925" vertical-offset="1338" max-vertical-offset="3468">
+          <folding>
+            <element signature="e#25#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/UserFeed.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="17" selection-start="42" selection-end="42" vertical-scroll-proportion="0.063197024" vertical-offset="0" max-vertical-offset="807" />
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/FeedCollection.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="39" selection-start="201" selection-end="201" vertical-scroll-proportion="-3.5416667" vertical-offset="0" max-vertical-offset="748">
           <folding />
         </state>
       </provider>
@@ -1019,19 +914,88 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/org/hmaissi/api/FeedController.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/TweetPost.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1112" selection-end="1346" vertical-scroll-proportion="0.0" vertical-offset="680" max-vertical-offset="3961">
+        <state line="10" column="42" selection-start="185" selection-end="185" vertical-scroll-proportion="-3.5416667" vertical-offset="0" max-vertical-offset="425" />
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/TumblrPost.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="57" selection-end="57" vertical-scroll-proportion="0.063197024" vertical-offset="0" max-vertical-offset="807">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/RedditPost.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="8" selection-start="671" selection-end="698" vertical-scroll-proportion="0.67048347" vertical-offset="0" max-vertical-offset="786">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/RssPost.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="85" selection-start="167" selection-end="167" vertical-scroll-proportion="-4.6041665" vertical-offset="0" max-vertical-offset="323" />
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/YoutubePost.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="50" selection-start="155" selection-end="155" vertical-scroll-proportion="-2.8333333" vertical-offset="0" max-vertical-offset="459" />
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/Post.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="96" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="935">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/RssService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="88" selection-start="2883" selection-end="2883" vertical-scroll-proportion="0.0" vertical-offset="1190" max-vertical-offset="2890">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/org/hmaissi/api/SearchController.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/WebCrawlerService.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="39" selection-start="2060" selection-end="2060" vertical-scroll-proportion="0.5018496" vertical-offset="664" max-vertical-offset="1496">
-          <folding>
-            <element signature="e#25#54#0" expanded="true" />
-          </folding>
+        <state line="49" column="36" selection-start="1262" selection-end="1262" vertical-scroll-proportion="0.0" vertical-offset="369" max-vertical-offset="1224">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/org/hmaissi/api/Feed.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="77" selection-start="525" selection-end="525" vertical-scroll-proportion="-10.478261" vertical-offset="201" max-vertical-offset="1054">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/org/hmaissi/api/CrawlerService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="124" column="12" selection-start="3424" selection-end="3424" vertical-scroll-proportion="0.69590646" vertical-offset="1496" max-vertical-offset="4573">
+          <folding />
         </state>
       </provider>
     </entry>

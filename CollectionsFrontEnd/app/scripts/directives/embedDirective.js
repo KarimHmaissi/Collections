@@ -7,7 +7,6 @@ mainModule.directive("embed", function(embedUtilityService) {
             scope: true,
 
             link: function($scope, element, attrs) {
-                    
                 var post = $scope.post;
 
                 var embed = null;
@@ -15,7 +14,8 @@ mainModule.directive("embed", function(embedUtilityService) {
                 var isVideo = false;
                 var isSelf = false;
                 var isGallery = false;
-                var isEmbedly = false;      
+                var isEmbedly = false; 
+                var largeThumbnail = false;  
 
                 //check type of embed 
 
@@ -45,13 +45,14 @@ mainModule.directive("embed", function(embedUtilityService) {
                     isImage = true;
                 }
 
-               
+               //video emebed
                 else if(attrs.video === "true") {
-                    console.log("youtube video detected");
+                    // console.log("youtube video detected");
                     embed = "<iframe width=\"560\" height=\"315\" src=\"//www.youtube.com/embed/" 
                                         + post.videoId + "\" frameborder=\"0\" allowfullscreen></iframe>";
                     isVideo = true;
                 }
+
 
                 else {
 
@@ -61,8 +62,32 @@ mainModule.directive("embed", function(embedUtilityService) {
                         embed = updatedImgurLink;
                         isImage = true;
                     } else {
-                        //no media to embed hide element
-                        element.hide();
+                        //test if large thumbnail
+
+                        // var img = new Image();
+                        // img.onLoad = function() {
+                        //     console.log("loading thumbnail");
+                        //     if(img.height > 200) {
+                        //         largeThumbnail = true;
+                        //         console.log("large thumbnail found");
+                        //     } else {
+                        //         //no media to embed hide element
+                        //         console.log("no content found");
+                        //         element.hide();
+                        //     }
+                        // };
+
+                        // Check original size of thumbnail and if large embed (for comics etc..)
+                        var newImage = new Image();
+                        newImage.src = post.thumbnail;
+                        // console.log(post.link);
+                        // console.log(newImage.width);
+                        if(newImage.width > 205) {
+                            largeThumbnail = true;
+                        } else {
+                            //no media to embed hide element
+                            element.hide();
+                        }
                     }
                 }
 
@@ -70,6 +95,7 @@ mainModule.directive("embed", function(embedUtilityService) {
                 var shown = false;
                 
                 element.on("click", function(e) {
+                    console.log("show");
 
                     e.preventDefault();
 
@@ -80,7 +106,8 @@ mainModule.directive("embed", function(embedUtilityService) {
                             class: "embed-container margin-top-sm"
                         });
 
-                        $(this).text("hide");
+                        //this line
+                        $(this).text("close");
 
                         if(isImage) {
                             var embedElement = $('<img src="' + embed + '" />');
@@ -94,7 +121,11 @@ mainModule.directive("embed", function(embedUtilityService) {
                             embedElement.appendTo(embedContainer);
                             fullResoLink.appendTo(embedContainer);
 
-                            $(this).closest(".post").append(embedContainer);
+                            //these lines
+                            $(this).children(".feed-preview-img").hide(300);
+                            $(this).append(embedContainer);
+
+                            // $(this).closest(".post").append(embedContainer);
 
                             embedElement.load(function() {
                                 //loaded image
@@ -112,6 +143,20 @@ mainModule.directive("embed", function(embedUtilityService) {
                             var embedElement = $(embed);
 
                             embedElement.appendTo(embedContainer);
+
+
+                            //these lines
+                            $(this).children(".feed-preview-img").hide(300);
+                            $(this).append(embedContainer);
+
+                            
+                            // $(this).closest(".post").append(embedContainer);
+
+                        } else if(largeThumbnail) {
+                            // console.log("appending large thumbnail");
+
+                            var embedElement = $('<img />').attr({ 'src': post.thumbnail, 'alt':post.title })
+                            embedElement.appendTo(embedContainer);
                             $(this).closest(".post").append(embedContainer);
                         }
 
@@ -119,6 +164,7 @@ mainModule.directive("embed", function(embedUtilityService) {
                         shown = false;
                         $(this).text("show");
                         $(this).closest(".post").find(".embed-container").remove();
+
                     }
                 });//./element.on click
                         

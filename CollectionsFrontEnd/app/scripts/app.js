@@ -4,13 +4,19 @@ angular.module('collectionsFrontEndApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'jmdobry.angular-cache'
+  'jmdobry.angular-cache',
+  'wu.masonry',
+  'ui.bootstrap'
   // 'elasticsearch'
 ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
+        controller: 'CollectionsCtrl'
+      })
+      .when('/feeds', {
+        templateUrl: 'views/feeds.html',
         controller: 'FeedsCtrl'
       })
       .when("/feed/:id", {

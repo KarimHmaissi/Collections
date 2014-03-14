@@ -33,9 +33,9 @@
     <!-- Add your site or application content here -->
     <div ng-controller="UserCtrl">
       <div ng-include src="'views/topMenu.html'"></div>
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-md-2 margin-top hidden-sm hidden-xs">
+          <div class="col-md-2 margin-top hidden-sm hidden-xs" ng-show="true" style="padding-left:48px">
             <div class="fixed" ng-include src="'views/sideMenu.html'"></div>
           </div>
           <div class="col-md-10 margin-top view-animate-container">
@@ -59,14 +59,33 @@
 
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-cache/dist/angular-cache.min.js"></script>
-    <script src="bower_components/elasticsearch/elasticsearch.angular.min.js"></script>
+    
+
+
     <script src="scripts/vendor/angular-animate.min.js"></script>
     <script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     
 
         <!-- build:js scripts/plugins.js -->
         <script src="bower_components/momentjs/min/moment-with-langs.min.js"></script>
+        <script src="bower_components/angular-cache/dist/angular-cache.min.js"></script>
+        <script src="bower_components/elasticsearch/elasticsearch.angular.min.js"></script>
+
+        <script src="bower_components/jquery-bridget/jquery.bridget.js"></script>
+        <script src="bower_components/get-style-property/get-style-property.js"></script>
+        <script src="bower_components/get-size/get-size.js"></script>
+        <script src="bower_components/eventEmitter/EventEmitter.js"></script>
+        <script src="bower_components/eventie/eventie.js"></script>
+        <script src="bower_components/doc-ready/doc-ready.js"></script>
+        <script src="bower_components/matches-selector/matches-selector.js"></script>
+        <script src="bower_components/outlayer/item.js"></script>
+        <script src="bower_components/outlayer/outlayer.js"></script>
+        <script src="bower_components/masonry/masonry.js"></script>
+        <script src="bower_components/imagesloaded/imagesloaded.js"></script>
+        <script src="bower_components/angular-masonry/angular-masonry.js"></script>
+
+        <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+
         <!-- endbuild -->
 
         <!-- build:js scripts/modules.js -->
@@ -90,6 +109,7 @@
         <script src="scripts/directives/followDirective.js"></script>
         <script src="scripts/directives/slideDirective.js"></script>
         <script src="scripts/directives/mashupAddFeedDirective.js"></script>
+        <script src="scripts/directives/tileDirective.js"></script>
         <script src="scripts/filters/dateTimestampFilter.js"></script>
         <!-- endbuild -->
 </body>

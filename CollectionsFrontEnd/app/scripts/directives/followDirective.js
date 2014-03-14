@@ -3,24 +3,27 @@ var mainModule = angular.module("collectionsFrontEndApp");
 mainModule.directive("follow", function(feedService) {
 
    var isFollowed = function(id, feeds) {
-      console.log("checking if feed is followed");
-      console.log(feeds);
-      console.log(id);
+      // console.log("checking if feed is followed");
+      // console.log(feeds);
+      // console.log(id);
       var x = 0;
       for(x; x < feeds.length; x++) {
-            console.log(feeds[x].id);
-            console.log(id);
+            // console.log(feeds[x].id);
+            // console.log(id);
             if(feeds[x].id === id) {
 
-                    console.log("feed followed");
+                    // console.log("feed followed");
                     return true;
             }
       }
-      console.log("feed is not followed");
+      // console.log("feed is not followed");
       return false;        
    };
 
-	return {
+
+
+
+      return {
    	restrict: 'A',
       // template: '<a>Follow</a>',
       // replace: false,
@@ -36,11 +39,53 @@ mainModule.directive("follow", function(feedService) {
 
       // template: "{{value}}",
 
-      link: function($scope, element, attrs) {
-      	
-            // console.log("running follow directive");
+      link: function(scope, element, attrs) {
+            console.log("about to run follow directive");
+      	scope.$on("Data_Ready", function  (){
+                   console.log("running follow directive");
 
-            // console.log($scope.user.feeds);
+                  var isFollowedFlag = false;
+                  if(attrs.feed === "true") {
+                        isFollowedFlag = isFollowed(scope.feed.id, scope.user.feeds);
+                  } else {
+                        isFollowedFlag = isFollowed(scope.feed.id, scope.user.collections);
+                  }
+                  
+                  if(isFollowedFlag) {
+                        element.attr("disabled", "disabled");
+                        element.text("Following");
+                  } else {
+                        
+                        element.on("click", function(e) {
+                              e.preventDefault();
+                              // console.log("following feed: directive");
+                              element.attr("disabled", "disabled");
+                              element.text("Following");
+                              //if not feed then collection/mashup
+                              if(attrs.feed === "true") {
+                                    scope.$apply(function() {
+                                          scope.user.feeds.push({
+                                                id: scope.feed.id, title: scope.feed.title, feedType: scope.feed.feedType
+                                          });
+                                    });
+
+                                    //send to server      
+                              } else {
+                                    scope.$apply(function() {
+                                          scope.user.collections.push({
+                                                id: scope.feed.id, title: scope.feed.title, feedType: scope.feed.feedType
+                                          });
+                                    });
+                                    //send to server todo
+                              }
+                              
+                        });  
+                  }
+                  
+
+            });
+            
+
             // var itemId = attrs.id;
 
             // console.log(parseInt("13254", 10))

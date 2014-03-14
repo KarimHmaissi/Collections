@@ -137,6 +137,15 @@ class FeedController {
 
     }
 
+    def getAllCollections() {
+
+
+        def collections = FeedCollection.list(max:100)
+
+        response.contentType = "text/json"
+        render "${params.callback}(${collections as JSON})"
+    }
+
     def getCollection() {
 
 //                println collection.feeds.id
@@ -201,11 +210,21 @@ class FeedController {
                 println now.time
 
                 def feeds = Feed.getAll(collection.feeds.id)
+                def posts
 
-                def posts = Post.withCriteria {
-                    'in'("feed", feeds)
-                    maxResults(100)
-                    order("score", "desc")
+                if(params.feedType) {
+                    posts = Post.withCriteria {
+                        'in'("feed", feeds)
+                        'eq'("postType", params.feedType)
+                        maxResults(100)
+                        order("score", "desc")
+                    }
+                } else {
+                    posts = Post.withCriteria {
+                        'in'("feed", feeds)
+                        maxResults(100)
+                        order("score", "desc")
+                    }
                 }
 
                 def later = new Date()
@@ -219,6 +238,7 @@ class FeedController {
                         "feeds": feeds,
                         "posts": posts
                 ]
+                //println json
                 render "${params.callback}(${json as JSON})"
             }
         } else {

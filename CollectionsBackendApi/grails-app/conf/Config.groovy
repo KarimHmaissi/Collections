@@ -136,17 +136,28 @@ elasticSearch.client.hosts = [
         [host:'192.168.0.2', port:9300]
 ]
 
-
-
-
-
-
 rabbitmq {
     connectionfactory {
         username = 'guest'
         password = 'guest'
         hostname = 'localhost'
     }
+
+    queues = {
+        exchange name: 'crawler.reddit', type: topic, durable: false, {
+            redditHigh durable: true, binding: 'crawler.reddit.#'
+        }
+        exchange name: 'crawler.rss', type: topic, durable: false, {
+            rssHigh durable: true, binding: 'crawler.rss.#'
+        }
+        exchange name: 'crawler.tumblr', type: topic, durable: false, {
+            tumblrHigh durable: true, binding: 'crawler.tumblr.#'
+        }
+        exchange name: 'crawler.web', type: topic, durable: false, {
+            webHigh durable: true, binding: 'crawler.web.#'
+        }
+    }
+
 }
 
 

@@ -1,9 +1,13 @@
 package org.hmaissi.api
 
+import grails.converters.JSON
+
 //import com.sun.syndication.feed.synd.SyndContent
 import grails.transaction.Transactional
 import groovyx.net.http.ContentType
 import groovyx.net.http.HTTPBuilder
+import org.apache.commons.lang.StringEscapeUtils
+import org.jsoup.nodes.Document
 
 import static groovyx.net.http.Method.GET
 
@@ -11,7 +15,10 @@ import static groovyx.net.http.Method.GET
 @Transactional
 class RssService {
 
+    static rabbitSubscribe = 'crawler.rss'
+
     def crawlerService
+    def webCrawlerService
 
     def crawl(Feed feed) {
         println "about to crawl rss feed"
@@ -79,6 +86,27 @@ class RssService {
                     post.embedData = "none"
                     post.redditCommentUrl = "none"
 
+                    //add image and description from post content or add to web crawler queue
+                    if(list[x].content) {
+                        String htmlFragment = StringEscapeUtils.unescapeHtml(list[x].content)
+                        Document doc = webCrawlerService.getDoc(htmlFragment)
+
+                        String thumbnail = webCrawlerService.getImages(doc)
+                        String description = webCrawlerService.getDescription(doc)
+
+                        if(thumbnail != null) {
+                            post.description = description
+                            post.thumbnail = thumbnail
+//                            post.description = description
+                        } else {
+                            //no thumbnail, request page is crawled by sending message
+                            post.description = ""
+                            post.thumbnail = ""
+                        }
+
+
+                    }
+
                     if(list[x].publishedDate) {
                         post.posted = new Date(list[x].publishedDate).getTime() / 1000
                     } else {
@@ -110,6 +138,35 @@ class RssService {
         def lowerBound = indexReversed
         def score = random.nextInt(upperBound - lowerBound ) + lowerBound
         return score * 35
+    }
+
+
+    //called by quartz job
+    //send rabbitmq messages
+    def crawlAllRssPosts() {
+        //send rabbitmq message for each post
+        println "sending messages"
+        def c = Feed.createCriteria()
+        def feeds = c.list {
+            eq("feedType", "rss")
+            order("percentNewPosts", "desc")
+        }
+
+        for(def feed: feeds) {
+            print "sending message: " + feed.title
+            def message = [feedUrl: feed.feedUrl, feedType: feed.feedType, feedTitle: feed.title] as JSON
+            rabbitSend "crawler.rss", "crawler.rss.high", message.toString()
+        }
+
+    }
+
+    //handle rabbitmq messaging
+    void handleMessage(message) {
+        println "recieved message: " + message
+        def json = JSON.parse(message)
+        crawlerService.crawlFeed(json.feedUrl, json.feedType, json.title)
+
+        Thread.sleep(2200)
     }
 
 }
