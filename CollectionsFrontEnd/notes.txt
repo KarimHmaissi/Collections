@@ -92,6 +92,14 @@ http://localhost:8080/CollectionsBackendApi/submit?feedUrl=http://www.reddit.com
 http://www.reddit.com/r/unitedkingdom
 
 
+Auto add some custom mashup feeds when user signs up
+
+
+Feed preview includes last 5 posts
+
+
+Remember last viewed feed, content, comment, display on page when revisits
+
 
 feeds: 
 collections

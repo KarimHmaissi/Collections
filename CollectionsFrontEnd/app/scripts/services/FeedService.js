@@ -231,6 +231,9 @@ mainModule.service("feedService", function($http, $q, $angularCacheFactory) {
 			var user = {
 				id: 1,
 				feeds: [
+				{id: 108078, title: "UKFDrumandBass", feedType: "youtube"},
+				{id: 105366, title: "Vlog Brothers", feedType: "youtube"},
+				{id: 106405, title: "videos", feedType: "reddit"}
 					// {id: 13414, title: "adviceanimals", feedType: "reddit"},
 					// {id: 13466, title: "AskReddit", feedType: "reddit"},
 					// {id: 13517, title: "aww", feedType: "reddit"},
@@ -253,6 +256,8 @@ mainModule.service("feedService", function($http, $q, $angularCacheFactory) {
 					// {id: 14388, title: "videos", feedType: "reddit"},
 					// {id: 14440, title: "worldnews", feedType: "reddit"},
 					// {id: 14492, title: "wtf", feedType: "reddit"}
+
+
 				],
 				collections: [
 					// {id: 14543, title: "Reddit Defaults"},
@@ -263,7 +268,7 @@ mainModule.service("feedService", function($http, $q, $angularCacheFactory) {
 				twitterDetails: {
 					userName: "KarimHmaissi"
 				},
-				viewType: "tile"
+				viewType: "list"
 
 
 			}

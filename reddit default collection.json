@@ -1,0 +1,103 @@
+{"title": "Reddit Defaults", "feeds": [{"title": "adviceanimals","feedUrl": "http://www.reddit.com/r/adviceanimals"},{"title": "AskReddit","feedUrl": "http://www.reddit.com/r/AskReddit"},{"title": "aww","feedUrl": "http://www.reddit.com/r/aww"},{"title": "bestof","feedUrl": "http://www.reddit.com/r/bestof"},{"title": "books","feedUrl": "http://www.reddit.com/r/books"},{"title": "earthporn","feedUrl": "http://www.reddit.com/r/earthporn"},{"title": "explainlikeimfive","feedUrl": "http://www.reddit.com/r/explainlikeimfive"},{"title": "funny","feedUrl": "http://www.reddit.com/r/funny"},{"title": "gaming","feedUrl": "http://www.reddit.com/r/gaming"},{"title": "gifs","feedUrl": "http://www.reddit.com/r/gifs"},{"title": "IAmA","feedUrl": "http://www.reddit.com/r/IAmA"},{"title": "movies","feedUrl": "http://www.reddit.com/r/movies"},{	"title": "music","feedUrl": "http://www.reddit.com/r/music"},{"title": "news","feedUrl": "http://www.reddit.com/r/news"},{"title": "pics","feedUrl": "http://www.reddit.com/r/pics"},{"title": "science","feedUrl": "http://www.reddit.com/r/science"},{"title": "technology","feedUrl": "http://www.reddit.com/r/technology"},{"title": "television","feedUrl": "http://www.reddit.com/r/television"},{"title": "todayilearned","feedUrl": "http://www.reddit.com/r/todayilearned"},{"title": "videos","feedUrl": "http://www.reddit.com/r/videos"},{"title": "worldnews","feedUrl": "http://www.reddit.com/r/worldnews"},{"title": "wtf","feedUrl": "http://www.reddit.com/r/wtf" }]}
+
+
+
+
+
+{"title": "Reddit Defaults", "feeds": 
+	[
+		{
+			"title": "adviceanimals",
+			"feedUrl": "http://www.reddit.com/r/adviceanimals"
+		},
+		{
+			"title": "AskReddit",
+			"feedUrl": "www.reddit.com/r/AskReddit"
+		},
+		{
+			"title": "aww",
+			"feedUrl": "http://www.reddit.com/r/aww"
+		},
+		{
+			"title": "bestof",
+			"feedUrl": "http://www.reddit.com/r/bestof"
+		},
+		{
+			"title": "books",
+			"feedUrl": "http://www.reddit.com/r/books"
+		},
+		{
+			"title": "earthporn",
+			"feedUrl": "http://www.reddit.com/r/earthporn"
+		},
+		{
+			"title": "explainlikeimfive",
+			"feedUrl": "http://www.reddit.com/r/explainlikeimfive"
+		},
+		{
+			"title": "funny",
+			"feedUrl": "http://www.reddit.com/r/funny"
+		},
+		{
+			"title": "gaming",
+			"feedUrl": "http://www.reddit.com/r/gaming"
+		},
+		{
+			"title": "gifs",
+			"feedUrl": "http://www.reddit.com/r/gifs"
+		},
+		{
+			"title": "IAmA",
+			"feedUrl": "http://www.reddit.com/r/IAmA"
+		},
+		{
+			"title": "movies",
+			"feedUrl": "http://www.reddit.com/r/movies"
+		},
+		{
+			"title": "music",
+			"feedUrl": "http://www.reddit.com/r/music"
+		},
+		{
+			"title": "news",
+			"feedUrl": "http://www.reddit.com/r/news"
+		},
+		{
+			"title": "pics",
+			"feedUrl": "http://www.reddit.com/r/pics"
+		},
+		{
+			"title": "science",
+			"feedUrl": "http://www.reddit.com/r/science"
+		},
+		{
+			"title": "technology",
+			"feedUrl": "http://www.reddit.com/r/technology"
+		},
+		{
+			"title": "television",
+			"feedUrl": "http://www.reddit.com/r/television"
+		},
+		{
+			"title": "todayilearned",
+			"feedUrl": "http://www.reddit.com/r/todayilearned"
+		},
+		{
+			"title": "videos",
+			"feedUrl": "http://www.reddit.com/r/videos"
+		},
+		{
+			"title": "worldnews",
+			"feedUrl": "http://www.reddit.com/r/worldnews"
+		},
+		{
+			"title": "wtf",
+			"feedUrl": "http://www.reddit.com/r/wtf" 
+		}
+	]
+}
+
+
+
+
+{"title": "AngularJS Community ", "feeds": [{"title": "r/angularjs","feedUrl": "http://www.reddit.com/r/angularjs"},{"title": "angularjsdaily","feedUrl": "http://www.angularjsdaily.com/~api/papers/b172848e-2741-468a-b631-2a6fb575b197/rss"},{"title": "angularjs youtube","feedUrl": "http://www.youtube.com/user/angularjs"},]}

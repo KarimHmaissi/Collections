@@ -1,22 +1,24 @@
-<a href="{{post.link}}"><strong>{{post.title}}</strong></a>
-<ul class="feed-details-list margin-top-sm">
-	
-	<li ng-switch on="post.thumbnail">
+<div class="feed-list" style="padding:14px">
+	<a href="{{post.link}}"><strong>{{post.title}}</strong></a>
+	<ul class="feed-details-list margin-top-sm">
 		
-		<img ng-switch-when="" src="/images/reddit.png" alt="" class="thumbnail-preview">
-		<img ng-switch-when="self" src="/images/reddit.png" alt="" class="thumbnail-preview">
-		<img ng-switch-when="default" src="/images/reddit.png" alt="" class="thumbnail-preview">
-		<img ng-switch-default src="{{post.thumbnail}}" alt="" class="thumbnail-preview">
-		<a embed="" href="#">Show</a>
-	</li>
-	
-	<li><p>{{post.redditUpvotes}} | {{post.redditDownVotes}}</p></li>
-	<li><a href="#/comments/{{post.redditId}}">{{post.numberOfComments}} comments</a></li>
-	<li><a href="http://www.reddit.com/r/comments/{{post.redditId}}">View comments on reddit</a></li>
-	<!-- <li><img src="/images/reddit.png" alt="Reddit Post"></li> -->
-	<li><p>Posted {{post.posted | timestamp}}</p></li>
-	<li><p>by {{post.author}}</p></li>
-</ul>
+		<li ng-switch on="post.thumbnail">
+			
+			<img ng-switch-when="" src="/images/reddit.png" alt="" class="thumbnail-preview">
+			<img ng-switch-when="self" src="/images/reddit.png" alt="" class="thumbnail-preview">
+			<img ng-switch-when="default" src="/images/reddit.png" alt="" class="thumbnail-preview">
+			<img ng-switch-default src="{{post.thumbnail}}" alt="" class="thumbnail-preview">
+			<a embed="" href="#">Show</a>
+		</li>
+		
+		<li><p>{{post.redditUpvotes}} | {{post.redditDownVotes}}</p></li>
+		<li><a href="#/comments/{{post.redditId}}">{{post.numberOfComments}} comments</a></li>
+		<li><a href="http://www.reddit.com/r/comments/{{post.redditId}}">View comments on reddit</a></li>
+		<!-- <li><img src="/images/reddit.png" alt="Reddit Post"></li> -->
+		<li><p>Posted {{post.posted | timestamp}}</p></li>
+		<li><p>by {{post.author}}</p></li>
+	</ul>
+</div>
 
 
 

@@ -1,0 +1,234 @@
+<!-- <ul class="list-style-none feed-details-list">
+  <li><a href="" ng-click="getFeedByType('all')">All</a></li>
+  <li><a href="" ng-click="getFeedByType('rss')">RSS</a></li>
+  <li><a href="" ng-click="getFeedByType('reddit')">Reddit</a></li>
+  <li><a href="" ng-click="getFeedByType('youtube')">Youtube</a></li>
+  <li><a href="" ng-click="getFeedByType('twitter')">Twitter</a></li>
+</ul>
+
+<div>
+  <ol>
+    <li ng-repeat="feed in feeds">
+      <a href="#/feed/{{feed.id}}"><strong>{{feed.title}}</strong></a>
+      <ul class="feed-details-list">
+        <li><p>{{feed.upvotes}}</p></li>
+        <li><p>{{feed.feedType}}</p></li>
+        <li><a href="#/user/{{feed.submitterId}}">{{feed.submitter}}</a></li>
+<li><a href="#" class="btn btn-primary btn-sm" id="{{feed.id}}" follow="">Follow Feed</a></li>
+      </ul>
+    </li>
+  </ol>
+</div> -->
+
+<!-- <ul class="list-style-none">
+<li class="margin-top-sm">
+    <a href="" ng-class="{active: showFilter}" ng-click="showFilter = !showFilter">
+      <strong>Filter feeds</strong>
+    </a href="">
+  </li>
+
+  <li class="margin-top-sm"><p>Followed feeds</p></li>
+  <li class=""><strong>Feeds</strong></li>
+  <li ng-repeat="feed in feeds | filter: {feedType: feedFilter}" class="margin-top-sm">
+    <a href="#/feed/{{feed.id}}">{{feed.title}}</a>
+    <p>{{feed.link}}</p>
+    <p>{{feed.feedType}}</p>
+  </li>
+</ul> -->
+
+
+
+
+<!-- <div class="row">
+  <ul class="list-style-none">
+    <li ng-repeat="feed in feeds | filter: {feedType: feedFilter} | filter:search:strict" class="col-md-4">
+    <li ng-repeat="feed in feeds | filter: {feedType: feedFilter}" class="col-md-12">
+    <div class="feed">
+
+        <div class="text-center">
+
+          <div class="row">
+            <div class="col-md-2">
+              <p style="font-size:2.3em; text-weight:300; margin-top:28px">{{feed._source.upvotes}}</p>
+            </div>
+            <div class="col-md-8">
+              <a href="#/feed/{{feed._id}}"><h3 class="margin-top-none">{{feed._source.title}}</h3></a>
+              <p><strong>{{feed._source.feedUrl}}</strong></p>
+
+              <ul class="feed-details-list">
+                
+                
+                <li><a href="#/user/{{feed.submitterId}}">{{feed._source.submitter}}</a></li>
+                <li>
+                  <div ng-switch on="feed._source.feedType">
+                    <img src="/images/youtube.png" alt="youtube" ng-switch-when="youtube">
+                    <img src="/images/rss.png" alt="rss"  ng-switch-when="rss">
+                    <img src="/images/twitter.png" alt="twitter"  ng-switch-when="twitter">
+                    <img src="/images/reddit.png" alt="reddit"  ng-switch-when="reddit">
+                  </div>
+                </li>
+                
+              </ul>
+            </div>
+            <div class="col-md-2">
+              <a href="#" class="btn btn-primary" id="{{feed._id}}" title="{{feed._source.title}}" type="{{feed._source.feedType}}" add="" style="margin-top:48px; margin-right:28px">Add</a>
+            </div>
+          </div>
+          
+          
+        </div>
+
+      </div>
+    </li>
+
+
+  </ul>
+</div> -->
+
+
+
+
+<div class="row margin-top">
+  
+<!--MISSING SUBMITTING USER AND UP VOTES
+             <div class="col-md-2">
+              <p style="font-size:2.3em; text-weight:300; margin-top:28px">{{feed._source.upvotes}}</p>
+            </div> 
+
+                         <ul class="feed-details-list">
+                <li><a href="#/user/{{feed.submitterId}}">{{feed._source.submitter}}</a></li>
+                <li>
+                </li>
+              </ul>
+
+-->
+<!-- <div masonry >
+    <div class="masonry-brick" ng-repeat="number in [0,1,2,3,4,5,6]">
+        <img ng-src="http://lorempixel.com/g/400/200/?5449" alt="A masonry brick">
+    </div>
+</div> -->
+
+
+   <ul class="list-style-none" masonry="" >
+    <li ng-repeat="feed in feeds | filter: {feedType: feedFilter}" class="masonry-brick tile-width">
+
+
+
+<!--       <div class="feed " >
+
+        <div ng-switch on="feed._source.feedType">
+          <img src="/images/youtube.png" alt="youtube" class="favicon"  ng-switch-when="youtube">
+          <img src="/images/rss.png" alt="rss" class="favicon"  ng-switch-when="rss">
+          <img src="/images/twitter.png" alt="twitter" class="favicon"  ng-switch-when="twitter">
+          <img src="/images/reddit.png" alt="reddit" class="favicon"  ng-switch-when="reddit">
+        </div>
+
+        <p><strong>{{feed._source.feedUrl}}</strong></p>
+
+ 
+        
+
+        <div class="text-center">
+          <a href="#/feed/{{feed._id}}"><h6 class="margin-top-none">{{feed._source.title}}</h6></a>
+          
+          <p class="margin-top-sm"><strong>Last post: </strong>{{feed._source.lastPostTitle}}</p>
+
+         
+        </div> 
+
+
+        <div class="image-grid">
+          <ul class="list-style-none">
+            <li ng-switch on="feed._source.thumbnail1">
+              <p ng-switch-when=""></p>
+              <img ng-switch-default="" src="{{feed._source.thumbnail1}}" class="img-thumbnail" alt="feed">
+            </li>
+            <li ng-switch on="feed._source.thumbnail2">
+              <p ng-switch-when=""></p>
+              <img ng-switch-default="" src="{{feed._source.thumbnail2}}" class="img-thumbnail" alt="feed">
+            </li>
+            <li ng-switch on="feed._source.thumbnail3">
+              <p ng-switch-when=""></p>
+              <img ng-switch-default="" src="{{feed._source.thumbnail3}}" class="img-thumbnail" alt="feed">
+            </li>
+            <li ng-switch on="feed._source.thumbnail4">
+              <p ng-switch-when=""></p>
+              <img ng-switch-default="" src="{{feed._source.thumbnail4}}" class="img-thumbnail" alt="feed">
+            </li>
+          </ul>
+          
+        </div>
+
+         <a href="#" class="btn btn-primary margin-right pull-right" id="{{feed._id}}" title="{{feed._source.title}}" type="{{feed._source.feedType}}" add="" style="margin-top:48px; margin-right:28px">Add</a>
+          
+
+      </div> -->
+
+
+      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+            <!-- front content -->
+            <img src="{{feed._source.thumbnail1}}" class="feed-preview-img" alt="feed">
+      
+            <div class="feed " >
+              <div ng-switch on="feed._source.feedType" class="pull-right">
+                <img src="/images/youtube.png" alt="youtube" class="favicon"  ng-switch-when="youtube">
+                <img src="/images/rss.png" alt="rss" class="favicon"  ng-switch-when="rss">
+                <img src="/images/twitter.png" alt="twitter" class="favicon"  ng-switch-when="twitter">
+                <img src="/images/reddit.png" alt="reddit" class="favicon"  ng-switch-when="reddit">
+
+                
+                <!-- <img src="{{feed._source.thumbnail2}}" class="img-thumbnail " alt="feed"> -->
+              </div>
+              
+              <div class="text-left">
+                <a href="#/feed/{{feed._id}}"><h6 class="margin-top-none">{{feed._source.title}}</h6></a>
+                <!-- <p class="word-break"><strong>{{feed._source.feedUrl}}</strong></p> -->
+                <p class="margin-top-sm"><strong>Last post: </strong>{{feed._source.lastPostTitle}}</p>
+              </div> 
+              <a href="#" class="btn btn-primary" id="{{feed._id}}" title="{{feed._source.title}}" type="{{feed._source.feedType}}" add="">Add</a>
+
+
+            </div>
+          </div>
+          <div class="back feed">
+            <!-- back content -->
+            <a href="#/feed/{{feed._id}}"><h6 class="margin-top-none">{{feed._source.title}}</h6></a>
+
+            <div class="margin-top-sm">
+              <p>Subscribers{{feed._source.upvotes}}</p>
+              <p>Submitted by: username</p>
+            </div>
+
+            <div class="">
+              <ul class="list-style-none">
+                <li ng-switch on="feed._source.thumbnail2">
+                  <p ng-switch-when=""></p>
+                  <img ng-switch-default="" src="{{feed._source.thumbnail2}}" class="img-thumbnail" alt="feed">
+                </li>
+                <li ng-switch on="feed._source.thumbnail3">
+                  <p ng-switch-when=""></p>
+                  <img ng-switch-default="" src="{{feed._source.thumbnail3}}" class="img-thumbnail" alt="feed">
+                </li>
+              </ul>
+              
+            </div>
+
+            <a href="" class="btn btn-primary margin-right pull-right" id="{{feed._id}}" follow="">Follow</a>
+            
+
+            
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    </li>
+
+
+  </ul> 
+</div>

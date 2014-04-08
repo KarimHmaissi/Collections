@@ -1,4 +1,4 @@
-<a href="{{post.link}}"><strong>{{post.title}}</strong></a>
+<!-- <a href="{{post.link}}"><strong>{{post.title}}</strong></a>
 
 
 
@@ -13,4 +13,43 @@
 
 
 </ul>
-<p>{{post.description | limitTo:100}}</p>
+<p>{{post.description | limitTo:100}}</p> -->
+
+
+
+ <div class="flip-container" ontouchstart="this.classList.toggle('hover');"
+       ng-mouseover="feed.showButtons = true" ng-mouseleave="feed.showButtons = false">
+        <div class="flipper">
+          <div class="front feed-list clearfix text-center">
+            <!-- front content -->
+            <a embed="" video="true" href=""><img src="{{post.thumbnail}}" class="feed-preview-img-list pull-left" alt="feed"></a>
+      
+            <div class=" " >
+              <div ng-switch on="post.postType" class="pull-right">
+                <img src="/images/youtube.png" alt="youtube" class="favicon"  ng-switch-when="youtube">
+                <img src="/images/rss.png" alt="rss" class="favicon"  ng-switch-when="rss">
+                <img src="/images/twitter.png" alt="twitter" class="favicon"  ng-switch-when="twitter">
+                <img src="/images/reddit.png" alt="reddit" class="favicon"  ng-switch-when="reddit">
+
+                
+                <!-- <img src="{{feed._source.thumbnail2}}" class="img-thumbnail " alt="feed"> -->
+              </div>
+              
+              <div class="text-left margin-top-sm margin-left-sm">
+                <a href="{{post.link}}"><h6 class="margin-top-none">{{post.title}}</h6></a>
+                <a href="{{post.redditCommentUrl}}"><p>{{post.numberOfComments}} comments</a>
+                <ul class="info list-style-none feed-details-list ">
+                  <li><p>Posted {{post.posted | timestamp}}</p></li>
+                  <li><p>Views: {{post.numYoutubeViews}}</p>  </li>
+                  <li><a href="http://www.youtube.com/user/{{post.author}}">by {{post.author}}</a></li>
+                </ul>
+                <!-- <p class="word-break"><strong>{{feed._source.feedUrl}}</strong></p> -->
+
+               	<!-- <a embed="" video="true" href="#" >Show Video</a>	 -->
+              </div> 
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>

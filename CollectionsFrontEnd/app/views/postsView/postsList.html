@@ -1,0 +1,27 @@
+<ol class="list-style-none">
+	<!-- <li ng-repeat="post in posts | orderBy:'timestamp':true" ng-switch on="post.postType"> -->
+	<li ng-repeat="post in posts | orderBy:'score':true" class="animate-repeat post">
+		<div ng-switch on="post.postType" >
+			<div ng-switch-when="collection" class="post">
+				<div ng-include src="'views/collection.html'"></div>
+			</div>
+			<div ng-switch-when="youtube" class="post">
+				<div ng-include src="'views/youtube.html'"></div>
+			</div>
+			<div ng-switch-when="rss" class="post">
+				<div ng-include src="'views/rss.html'"></div>
+			</div>
+			<div ng-switch-when="twitter" class="post">
+				<div ng-include src="'views/twitter.html'"></div>
+			</div>
+			<div ng-switch-when="reddit" class="post">
+				<div ng-include src="'views/reddit.html'"></div>
+			</div>
+		</div>
+		
+		<!-- <p>{{post.feed}}</p> -->
+		<!-- <div>{{Math.floor((post.posted | timestamp) / 1000 / 60 / 60)}}</div> -->
+		<!-- <div>{{post.posted | timestamp}}</div> -->
+		<!-- <div>{{post.score}}</div> -->
+	</li>
+</ol>

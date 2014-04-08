@@ -1,0 +1,92 @@
+body {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6, p, a {
+  text-rendering: optimizelegibility;
+  color: #fff;
+
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+
+} 
+
+h2 {
+	font-size: 24px;
+	font-weight: 700;
+
+}
+
+h3 {
+	font-size: 18px;
+	font-weight: 300;
+}
+
+h4 {
+
+}
+
+p {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+a {
+	font-weight: 700;
+}
+
+
+.card {
+	padding: 20px;
+	margin-bottom: 10px;
+}
+
+.card h3.title {
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+.card img.thumbnail {
+	padding: 20px;
+}
+
+.card ul.meta-info {
+	list-style: none;
+	padding: 0;
+	margin-bottom: 10px;
+}
+
+.card ul.meta-info li {
+	display: inline-block;
+}
+
+
+/*link colors*/
+.card a .comments {
+	color: #589aaa;
+}
+
+.card a.youtube {
+	color: #e96e66;
+}
+
+.card a.reddit {
+	color: #1abc9c;
+}
+
+
+
+
+
+
+
+

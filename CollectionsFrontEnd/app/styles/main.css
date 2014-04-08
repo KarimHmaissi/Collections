@@ -252,7 +252,7 @@ margin-left: 14px;
 
 .feed-details-list > li {
   display: inline-block;
-  padding-left: 8px;
+  /*padding-left: 8px;*/
 }
 
 .filterfeeds-list li {
@@ -316,6 +316,23 @@ margin-left: 14px;
   margin-top: 0;
 }
 
+/*Feed in a list*/
+.feed-list {
+  overflow: hidden;
+  box-shadow: 1px 1px 5px 1px #ccc;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 8px;
+  margin-top: 0;
+  max-width: 600px;
+  padding-right: 14px;
+
+  margin-left: 18%;
+}
+
+.margin-left-sm {
+  margin-left: 14px;
+}
+
 .feed .row {
   padding: 14px;
 }
@@ -331,6 +348,14 @@ margin-left: 14px;
 .feed-preview-img {
   padding: 0 8px;
   max-width: 100%;
+}
+
+.feed-preview-img-list {
+  padding: 0 8px;
+  max-width: 100%;
+  margin-right: 14px;
+  max-height: 17%;
+  padding-left: 0;
 }
  
 /*.view-animate {
@@ -482,7 +507,7 @@ height: 95%;
 
 .masonry-brick {
   display: none;
-  margin: 0.5em;
+  margin: 0.25em;
 }
 
 .masonry-brick.loaded {
@@ -499,12 +524,20 @@ height: 95%;
   .tile-width-reddit {
     width: 98%;
   }
+
+  .feed-list {
+    margin-left: 0;
+  }
 }
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
   .tile-width {
     width: 48%;
+  }
+
+  .feed-list {
+    margin-left: 0;
   }
 }
   

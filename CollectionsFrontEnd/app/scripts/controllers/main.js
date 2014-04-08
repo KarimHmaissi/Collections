@@ -28,6 +28,7 @@ mainModule.controller('FeedsCtrl', function ($scope, $timeout, feedService, feed
 				console.log("query changed");
 				$scope.feeds = result.hits.hits
 				$scope.first = false;
+				$scope.$broadcast("Data_Ready");
 			});
 		} else {
 			$timeout(function() {
@@ -36,6 +37,7 @@ mainModule.controller('FeedsCtrl', function ($scope, $timeout, feedService, feed
 						// console.log(result);
 						console.log("query changed");
 						$scope.feeds = result.hits.hits
+						$scope.$broadcast("Data_Ready");
 					});
 				}
 			}, 700);
@@ -49,6 +51,7 @@ mainModule.controller('FeedsCtrl', function ($scope, $timeout, feedService, feed
 			feedSearchService.search(query).then(function(result) {
 				console.log(result);
 				$scope.feeds = result.hits.hits
+				$scope.$broadcast("Data_Ready");
 			});
 		}
 	}

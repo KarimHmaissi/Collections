@@ -1,0 +1,72 @@
+ <div class="flip-container" ontouchstart="this.classList.toggle('hover');"
+       ng-mouseover="feed.showButtons = true" ng-mouseleave="feed.showButtons = false">
+        <div class="flipper">
+          <div class="front">
+            <!-- front content -->
+            <a embed="" video="true" href=""><img src="{{post.thumbnail}}" class="feed-preview-img" alt="feed"></a>
+      
+            <div class="feed " >
+              <div ng-switch on="post.postType" class="pull-right">
+                <img src="/images/youtube.png" alt="youtube" class="favicon"  ng-switch-when="youtube">
+                <img src="/images/rss.png" alt="rss" class="favicon"  ng-switch-when="rss">
+                <img src="/images/twitter.png" alt="twitter" class="favicon"  ng-switch-when="twitter">
+                <img src="/images/reddit.png" alt="reddit" class="favicon"  ng-switch-when="reddit">
+
+                
+                <!-- <img src="{{feed._source.thumbnail2}}" class="img-thumbnail " alt="feed"> -->
+              </div>
+              
+              <div class="text-left">
+                <a href="{{post.link}}"><h6 class="margin-top-none">{{post.title}}</h6></a>
+                <a href="{{post.redditCommentUrl}}"><p>{{post.numberOfComments}} comments</a>
+                <div class="info">
+                  <p>Posted {{post.posted | timestamp}}</p>
+                  <p>Views: {{post.numYoutubeViews}}</p>  
+                  <a href="http://www.youtube.com/user/{{post.author}}">by {{post.author}}</a>
+                </div>
+                <!-- <p class="word-break"><strong>{{feed._source.feedUrl}}</strong></p> -->
+
+               	<!-- <a embed="" video="true" href="#" >Show Video</a>	 -->
+               	
+				        
+                
+				
+				        
+              </div> 
+              
+<!--               <div style="height:35px">
+
+                  <a href="#/feed/{{feed._id}}" class="btn btn-primary margin-right pull-right" >View</a>
+                  <a href="#/feed/{{post}}" class="btn btn-primary margin-right pull-right" >Info</a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+
+
+<!--           <div class="back feed">
+
+  <a href="#/feed/{{feed._id}}"><h6 class="margin-top-none">{{feed._source.title}}</h6></a>
+
+  <div class="margin-top-sm">
+    <p>Subscribers{{feed._source.upvotes}}</p>
+    <p>Submitted by: username</p>
+  </div>
+
+  <div class="">
+    <ul class="list-style-none">
+      <li ng-switch on="feed._source.thumbnail2">
+        <p ng-switch-when=""></p>
+        <img ng-switch-default="" src="{{feed._source.thumbnail2}}" class="img-thumbnail" alt="feed">
+      </li>
+      <li ng-switch on="feed._source.thumbnail3">
+        <p ng-switch-when=""></p>
+        <img ng-switch-default="" src="{{feed._source.thumbnail3}}" class="img-thumbnail" alt="feed">
+      </li>
+    </ul>
+    
+  </div>
+</div> -->
+
+        </div>
+      </div>
